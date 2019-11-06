@@ -11,7 +11,7 @@ from .discover import Discover
 from .find import Find
 from .genres import Genres
 # from .guest import Guest
-# from .keyword import Keyword
+from .keywords import Keywords
 # from .lists import Lists
 from .movies import Movies
 # from .network import Network
