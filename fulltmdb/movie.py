@@ -28,8 +28,8 @@ class Movie():
             If it belongs to your watchlist
             If it belongs to your favourite list
 
-        required: movie_id, session_id
-        optional: guest_session_id
+        required: movie_id, session_id or guest_session_id
+        optional: 
         '''
 
         headers = {
