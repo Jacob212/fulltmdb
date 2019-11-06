@@ -16,6 +16,6 @@ from .movie import Movie
 # from .network import Network
 # from .person import Person
 # from .review import Review
-# from .search import Search
+from .search import Search
 # from .trending import Trending
 from .tv import Tv
