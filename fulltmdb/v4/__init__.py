@@ -1,3 +1,3 @@
-from .accounts import Accounts
-from .auth import Auth
-from .lists import Lists
+from . import accounts as Accounts
+from . import auth as Auth
+from . import lists as Lists
