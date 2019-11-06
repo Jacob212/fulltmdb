@@ -2,7 +2,7 @@ from .accounts import Accounts
 from .authentication import Authentication
 from .certifications import Certifications
 from .changes import Changes
-from .collection import Collections
+from .collections import Collections
 from .companies import Companies
 from .configuration import Configuration
 from .credits import Credits
