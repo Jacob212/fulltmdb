@@ -18,5 +18,5 @@ from .networks import Networks
 # from .person import Person
 # from .review import Review
 from .search import Search
-# from .trending import Trending
+from .trending import Trending
 from .tv import Tv
