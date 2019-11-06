@@ -1,5 +1,5 @@
 from .accounts import Accounts
-# from .authentication import Authentication
+from .authentication import Authentication
 from .certifications import Certifications
 from .changes import Changes
 from .collection import Collections
