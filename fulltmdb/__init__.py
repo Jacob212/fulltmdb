@@ -12,7 +12,7 @@ from .find import Find
 from .genres import Genres
 from .guests import Guests
 from .keywords import Keywords
-# from .lists import Lists
+from .lists import Lists
 from .movies import Movies
 from .networks import Networks
 # from .person import Person
