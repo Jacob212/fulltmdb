@@ -1,21 +1,21 @@
-from .accounts import Accounts
-from .authentication import Authentication
-from .certifications import Certifications
-from .changes import Changes
-from .collections import Collections
-from .companies import Companies
-from .configuration import Configuration
-from .credits import Credits
-from .discover import Discover
-from .find import Find
-from .genres import Genres
-from .guests import Guests
-from .keywords import Keywords
-from .lists import Lists
-from .movies import Movies
-from .networks import Networks
-from .people import People
-from .reviews import Reviews
-from .search import Search
-from .trending import Trending
-from .tv import Tv
+from . import accounts as Accounts
+from . import authentication as Authentication
+from . import certifications as Certifications
+from . import changes as Changes
+from . import collections as Collections
+from . import companies as Companies
+from . import configuration as Configuration
+from . import credits as Credits
+from . import discover as Discover
+from . import find as Find
+from . import genres as Genres
+from . import guests as Guests
+from . import keywords as Keywords
+from . import lists as Lists
+from . import movies as Movies
+from . import networks as Networks
+from . import people as People
+from . import reviews as Reviews
+from . import search as Search
+from . import trending as Trending
+from . import tv as Tv
