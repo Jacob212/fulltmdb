@@ -15,7 +15,7 @@ setup(
     url = "https://github.com/Jacob212/fulltmdb",
     packages=['fulltmdb'],
     long_description=read('README'),
-    install_requires=['requests', 'requests_cache', 'time'],
+    install_requires=['requests', 'requests_cache'],
     classifiers = [
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
