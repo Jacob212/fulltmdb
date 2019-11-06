@@ -10,7 +10,7 @@ from .credits import Credits
 from .discover import Discover
 from .find import Find
 from .genres import Genres
-# from .guest import Guest
+from .guests import Guests
 from .keywords import Keywords
 # from .lists import Lists
 from .movies import Movies
