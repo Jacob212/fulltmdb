@@ -14,7 +14,7 @@ from .genres import Genres
 from .keywords import Keywords
 # from .lists import Lists
 from .movies import Movies
-# from .network import Network
+from .networks import Networks
 # from .person import Person
 # from .review import Review
 from .search import Search
