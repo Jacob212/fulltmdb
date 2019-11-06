@@ -20,7 +20,7 @@ class Certifications():
 
         return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=headers)
 
-   def get_tv_certifications():
+    def get_tv_certifications():
         '''
         Get an up to date list of the officially supported TV show certifications on TMDb.
 
