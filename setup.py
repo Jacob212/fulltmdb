@@ -13,8 +13,9 @@ setup(
     keywords = ['movie', 'the movie database', 'movie database', 'tmdb', 
                 'wrapper', 'database', 'themoviedb', 'moviedb', 'api'],
     url = "https://github.com/Jacob212/fulltmdb",
-    packages=['requests', 'requests_cache','time'],
+    packages=['fulltmdb'],
     long_description=read('README'),
+    install_requires=['requests', 'requests_cache', 'time'],
     classifiers = [
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
