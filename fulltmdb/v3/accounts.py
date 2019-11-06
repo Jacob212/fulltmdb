@@ -74,9 +74,9 @@ class Accounts():
         '''
 
         payload = {
-            "media_type": media_type,
-            "media_id": media_id,
-            "favorite": true
+            'media_type': media_type,
+            'media_id': media_id,
+            'favorite': true
             }
 
         headers = {
@@ -170,9 +170,9 @@ class Accounts():
         '''
 
         payload = {
-            "media_type": media_type,
-            "media_id": media_id,
-            "watchlist": True
+            'media_type': media_type,
+            'media_id': media_id,
+            'watchlist': True
             }
 
         headers = {

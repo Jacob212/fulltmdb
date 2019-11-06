@@ -14,7 +14,7 @@ from .keywords import Keywords
 from .lists import Lists
 from .movies import Movies
 from .networks import Networks
-# from .person import Person
+from .people import People
 from .reviews import Reviews
 from .search import Search
 from .trending import Trending
