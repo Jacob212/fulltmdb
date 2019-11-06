@@ -4,7 +4,7 @@ from .base import _call, _get_read_access_token
 All api requests under the cerifications tab in https://developers.themoviedb.org/3/cerifications
 '''
 
-class Certification():
+class Certifications():
     def get_movie_certifications():
         '''
         Get an up to date list of the officially supported movie certifications on TMDb.

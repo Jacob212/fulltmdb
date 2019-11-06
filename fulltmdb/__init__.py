@@ -1,10 +1,10 @@
 from .base import purge_cache, set_api_key, set_read_access_token
 # from .account import Account
 # from .authentication import Authentication
-from .certification import Certification
+from .certifications import Certifications
 from .changes import Changes
-from .collection import Collection
-# from .company import Company
+from .collection import Collections
+from .companies import Companies
 # from .configuration import Configuration
 # from .credit import Credit
 # from .discover import Discover
@@ -13,7 +13,7 @@ from .collection import Collection
 # from .guest import Guest
 # from .keyword import Keyword
 # from .lists import Lists
-from .movie import Movie
+from .movies import Movies
 # from .network import Network
 # from .person import Person
 # from .review import Review

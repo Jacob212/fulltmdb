@@ -4,7 +4,7 @@ from .base import _call, _get_read_access_token
 All api requests under the movies tab in https://developers.themoviedb.org/3/movies
 '''
 
-class Movie():
+class Movies():
     def get_details(movie_id, **kwargs):
         '''
         Get the primary information about a movie.

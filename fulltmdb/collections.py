@@ -4,7 +4,7 @@ from .base import _call, _get_read_access_token
 All api requests under the collections tab in https://developers.themoviedb.org/3/collections
 '''
 
-class Collection():
+class Collections():
     def get_details(collection_id, **kwargs):
         '''
         Get collection details by id.
