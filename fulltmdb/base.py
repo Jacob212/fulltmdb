@@ -6,18 +6,18 @@ import requests_cache
 requests_cache.install_cache(cache_name='TMDB-cache', backend='sqlite', expire_after=3600)
 environ["remaining"] = "40"
 
-
-def purge_cache():
+class Setup():
+    def purge_cache():
     requests_cache.remove_expired_responses()
 
-def set_api_key(api_key):
-    environ["TMDB_API_KEY"] = api_key
+    def set_api_key(api_key):
+        environ["TMDB_API_KEY"] = api_key
+
+    def set_read_access_token(access_token):
+        environ["TMDB_READ_ACCESS_TOKEN"] = access_token
 
 def _get_api_key():
     return f'api_key={environ.get("TMDB_API_KEY")}'
-
-def set_read_access_token(access_token):
-    environ["TMDB_READ_ACCESS_TOKEN"] = access_token
 
 def _get_read_access_token():
     return environ.get("TMDB_READ_ACCESS_TOKEN")
