@@ -1,7 +1,7 @@
 from .base import _call, _get_read_access_token
 
 '''
-All api requests under the movies tab in https://developers.themoviedb.org/3/movies
+All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
 '''
 
 class Configuration():
