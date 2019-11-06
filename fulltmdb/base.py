@@ -8,7 +8,7 @@ environ["remaining"] = "40"
 
 class Setup():
     def purge_cache():
-    requests_cache.remove_expired_responses()
+        requests_cache.remove_expired_responses()
 
     def set_api_key(api_key):
         environ["TMDB_API_KEY"] = api_key
