@@ -18,4 +18,4 @@ from .movie import Movie
 # from .review import Review
 # from .search import Search
 # from .trending import Trending
-# from .tv import Tv
+from .tv import Tv
