@@ -5,7 +5,7 @@ from .certifications import Certifications
 from .changes import Changes
 from .collection import Collections
 from .companies import Companies
-# from .configuration import Configuration
+from .configuration import Configuration
 # from .credit import Credit
 # from .discover import Discover
 # from .find import Find
