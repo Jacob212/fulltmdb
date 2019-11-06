@@ -6,7 +6,7 @@ from .changes import Changes
 from .collection import Collections
 from .companies import Companies
 from .configuration import Configuration
-# from .credit import Credit
+from .credits import Credits
 # from .discover import Discover
 # from .find import Find
 # from .genre import Genre
