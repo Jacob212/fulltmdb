@@ -3,7 +3,7 @@ from .base import purge_cache, set_api_key, set_read_access_token
 # from .authentication import Authentication
 from .certification import Certification
 from .changes import Changes
-# from .collection import Collection
+from .collection import Collection
 # from .company import Company
 # from .configuration import Configuration
 # from .credit import Credit
