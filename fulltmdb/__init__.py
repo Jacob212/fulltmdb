@@ -16,7 +16,7 @@ from .keywords import Keywords
 from .movies import Movies
 from .networks import Networks
 # from .person import Person
-# from .review import Review
+from .reviews import Reviews
 from .search import Search
 from .trending import Trending
 from .tv import Tv
