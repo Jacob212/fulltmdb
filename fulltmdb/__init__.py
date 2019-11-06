@@ -7,7 +7,7 @@ from .collection import Collections
 from .companies import Companies
 from .configuration import Configuration
 from .credits import Credits
-# from .discover import Discover
+from .discover import Discover
 # from .find import Find
 # from .genre import Genre
 # from .guest import Guest
