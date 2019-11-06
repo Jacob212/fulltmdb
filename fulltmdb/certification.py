@@ -6,31 +6,31 @@ All api requests under the cerifications tab in https://developers.themoviedb.or
 
 class Certification():
     def get_movie_certifications():
-            '''
-            Get an up to date list of the officially supported movie certifications on TMDb.
+        '''
+        Get an up to date list of the officially supported movie certifications on TMDb.
 
-            required: 
-            optional:
-            '''
+        required: 
+        optional:
+        '''
 
-            headers = {
-                'authorization': f'Bearer {_get_read_access_token()}',
-                'content-type': 'application/json;charset=utf-8'
-                }
+        headers = {
+            'authorization': f'Bearer {_get_read_access_token()}',
+            'content-type': 'application/json;charset=utf-8'
+            }
 
-            return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=headers)
+        return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=headers)
 
    def get_tv_certifications():
-            '''
-            Get an up to date list of the officially supported TV show certifications on TMDb.
+        '''
+        Get an up to date list of the officially supported TV show certifications on TMDb.
 
-            required: 
-            optional:
-            '''
+        required: 
+        optional:
+        '''
 
-            headers = {
-                'authorization': f'Bearer {_get_read_access_token()}',
-                'content-type': 'application/json;charset=utf-8'
-                }
+        headers = {
+            'authorization': f'Bearer {_get_read_access_token()}',
+            'content-type': 'application/json;charset=utf-8'
+            }
 
-            return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list', headers=headers)
+        return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list', headers=headers)
