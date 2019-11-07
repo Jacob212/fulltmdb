@@ -14,7 +14,7 @@ setup(
     description=('A wrapper for The Movie Database API v3 and v4.'),
     keywords=['tmdb', 'api-wrapper'],
     url='https://github.com/Jacob212/fulltmdb',
-    packages=['fulltmdb'],
+    packages=['fulltmdb','fulltmdb.v3','fulltmdb.v4'],
     test_suite='test',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
