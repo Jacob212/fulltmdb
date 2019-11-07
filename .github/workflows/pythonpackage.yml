@@ -1,4 +1,4 @@
-name: Python package
+name: Build
 env:
   TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }} 
 on: [push]
