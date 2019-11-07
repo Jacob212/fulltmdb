@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the tv tab in https://developers.themoviedb.org/3/tv
 '''
 
-def get_details(tv_id, **kwargs):
+def details(tv_id, **kwargs):
     '''
     Get the primary TV show details by id.
     Supports append_to_response. https://developers.themoviedb.org/3/getting-started/append-to-response
@@ -20,7 +20,7 @@ def get_details(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}', params=kwargs, headers=headers)
 
-def get_account_states(tv_id, **kwargs):
+def account_states(tv_id, **kwargs):
     '''
     Grab the following account states for a session:
         TV show rating
@@ -38,7 +38,7 @@ def get_account_states(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/account_states', params=kwargs, headers=headers)
 
-def get_alternative_titles(tv_id, **kwargs):
+def alternative_titles(tv_id, **kwargs):
     '''
     Returns all of the alternative titles for a TV show.
 
@@ -53,7 +53,7 @@ def get_alternative_titles(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/alternative_titles', params=kwargs, headers=headers)
 
-def get_changes(tv_id, **kwargs):
+def changes(tv_id, **kwargs):
     '''
     Get the changes for a TV show. By default only the last 24 hours are returned.
     You can query up to 14 days in a single query by using the start_date and end_date query parameters.
@@ -73,7 +73,7 @@ def get_changes(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/changes', params=kwargs, headers=headers)
 
-def get_content_ratings(tv_id, **kwargs):
+def content_ratings(tv_id, **kwargs):
     '''
     Get the list of content ratings (certifications) that have been added to a TV show.
 
@@ -88,7 +88,7 @@ def get_content_ratings(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/content_ratings', params=kwargs, headers=headers)
 
-def get_credits(tv_id, **kwargs):
+def credits(tv_id, **kwargs):
     '''
     Get the credits (cast and crew) that have been added to a TV show.
 
@@ -103,7 +103,7 @@ def get_credits(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/credits', params=kwargs, headers=headers)
 
-def get_episode_groups(tv_id, **kwargs):
+def episode_groups(tv_id, **kwargs):
     '''
     Get all of the episode groups that have been created for a TV show.
     With a group ID you can call the https://developers.themoviedb.org/3/tv-episode-groups/get-tv-episode-group-details method.
@@ -119,7 +119,7 @@ def get_episode_groups(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/episode_groups', params=kwargs, headers=headers)
 
-def get_external_ids(tv_id, **kwargs):
+def external_ids(tv_id, **kwargs):
     '''
     Get the external ids for a TV show. We currently support the following external sources.
 
@@ -147,7 +147,7 @@ def get_external_ids(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/external_ids', params=kwargs, headers=headers)
 
-def get_images(tv_id, **kwargs):
+def images(tv_id, **kwargs):
     '''
     Get the images that belong to a TV show.
     Querying images with a language parameter will filter the results.
@@ -165,7 +165,7 @@ def get_images(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/images', params=kwargs, headers=headers)
 
-def get_keywords(tv_id):
+def keywords(tv_id):
     '''
     Get the keywords that have been added to a TV show.
 
@@ -180,7 +180,7 @@ def get_keywords(tv_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/keywords', headers=headers)
 
-def get_recommendations(tv_id, **kwargs):
+def recommendations(tv_id, **kwargs):
     '''
     Get the list of TV show recommendations for this item.
 
@@ -195,7 +195,7 @@ def get_recommendations(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/recommendations', params=kwargs, headers=headers)
 
-def get_reviews(tv_id, **kwargs):
+def reviews(tv_id, **kwargs):
     '''
     Get the reviews for a TV show.
 
@@ -210,7 +210,7 @@ def get_reviews(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/reviews', params=kwargs, headers=headers)
 
-def get_screened_theatrically(tv_id):
+def screened_theatrically(tv_id):
     '''
     Get a list of seasons or episodes that have been screened in a film festival or theatre.
 
@@ -225,7 +225,7 @@ def get_screened_theatrically(tv_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/screened_theatrically', headers=headers)
 
-def get_similar_tv_shows(tv_id, **kwargs):
+def similar(tv_id, **kwargs):
     '''
     Get a list of similar TV shows.
     These items are assembled by looking at keywords and genres.
@@ -241,7 +241,7 @@ def get_similar_tv_shows(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/similar', params=kwargs, headers=headers)
 
-def get_translations(tv_id, **kwargs):
+def translations(tv_id, **kwargs):
     '''
     Get a list of the translations that exist for a TV show.
 
@@ -256,7 +256,7 @@ def get_translations(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/translations', params=kwargs, headers=headers)
 
-def get_videos(tv_id, **kwargs):
+def videos(tv_id, **kwargs):
     '''
     Get the videos that have been added to a TV show.
 
@@ -271,7 +271,7 @@ def get_videos(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/videos', params=kwargs, headers=headers)
 
-# def get_lists(tv_id, **kwargs): should this be here?
+# def lists(tv_id, **kwargs): should this be here?
 #     '''
 #     Get a list of lists that this movie belongs to.
 
@@ -286,7 +286,7 @@ def get_videos(tv_id, **kwargs):
 
 #     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/lists', params=kwargs, headers=headers)
 
-def get_latest(**kwargs):
+def latest(**kwargs):
     '''
     Get the most newly created TV show. This is a live response and will continuously change.
 
@@ -301,7 +301,7 @@ def get_latest(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/latest', params=kwargs, headers=headers)
 
-def get_airing_today(**kwargs):
+def airing_today(**kwargs):
     '''
     Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.
     You can specify a timezone to offset the day calculation. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).
@@ -317,7 +317,7 @@ def get_airing_today(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/airing_today', params=kwargs, headers=headers)
 
-def get_on_the_air(**kwargs):
+def on_the_air(**kwargs):
     '''
     Get a list of shows that are currently on the air.
     This query looks for any TV show that has an episode with an air date in the next 7 days.
@@ -333,7 +333,7 @@ def get_on_the_air(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/on_the_air', params=kwargs, headers=headers)
 
-def get_popular(**kwargs):
+def popular(**kwargs):
     '''
     Get a list of the current popular TV shows on TMDb. This list updates daily.
 
@@ -348,7 +348,7 @@ def get_popular(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/popular', params=kwargs, headers=headers)
 
-def get_top_rated(**kwargs):
+def top_rated(**kwargs):
     '''
     Get a list of the top rated TV shows on TMDb.
 

@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
 '''
 
-def get_api_configuration():
+def api():
     '''
     Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data.
     The purpose of this is to try and keep the actual API responses as light as possible.
@@ -28,7 +28,7 @@ def get_api_configuration():
 
     return _call('GET', f'https://api.themoviedb.org/3/configuration', headers=headers)
 
-def get_countries():
+def countries():
     '''
     Get the list of countries (ISO 3166-1 tags) used throughout TMDb.
 
@@ -43,7 +43,7 @@ def get_countries():
 
     return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', headers=headers)
 
-def get_jobs():
+def jobs():
     '''
     Get a list of the jobs and departments we use on TMDb.
 
@@ -58,7 +58,7 @@ def get_jobs():
 
     return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', headers=headers)
 
-def get_languages():
+def languages():
     '''
     Get the list of languages (ISO 639-1 tags) used throughout TMDb.
 
@@ -73,7 +73,7 @@ def get_languages():
 
     return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', headers=headers)
 
-def get_primary_translations():
+def primary_translations():
     '''
     Get a list of the officially supported translations on TMDb.
 
@@ -98,7 +98,7 @@ def get_primary_translations():
 
     return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', headers=headers)
 
-def get_timezones():
+def timezones():
     '''
     Get the list of timezones used throughout TMDb.
 

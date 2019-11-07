@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the reviews tab in https://developers.themoviedb.org/3/reviews
 '''
 
-def get_details(review_id):
+def details(review_id):
     '''
 
     required: review_id

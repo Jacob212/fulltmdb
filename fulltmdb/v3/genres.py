@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the genres tab in https://developers.themoviedb.org/3/genres
 '''
 
-def get_movie_list(**kwargs):
+def movie(**kwargs):
     '''
     Get the list of official genres for movies.
 
@@ -19,7 +19,7 @@ def get_movie_list(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/genre/movie/list', params=kwargs, headers=headers)
 
-def get_tv_list(**kwargs):
+def tv(**kwargs):
     '''
     Get the list of official genres for TV shows.
 

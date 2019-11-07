@@ -3,7 +3,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the collections tab in https://developers.themoviedb.org/3/collections
 '''
 
-def get_details(collection_id, **kwargs):
+def details(collection_id, **kwargs):
     '''
     Get collection details by id.
 
@@ -18,7 +18,7 @@ def get_details(collection_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/collection/{collection_id}', params=kwargs, headers=headers)
 
-def get_images(collection_id, **kwargs):
+def images(collection_id, **kwargs):
     '''
     Get the images for a collection by id.
 
@@ -33,7 +33,7 @@ def get_images(collection_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/collection/{collection_id}/images', params=kwargs, headers=headers)
 
-def get_translations(collection_id, **kwargs):
+def translations(collection_id, **kwargs):
     '''
     Get the list translations for a collection by id.
 

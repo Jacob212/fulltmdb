@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the credits tab in https://developers.themoviedb.org/3/credits
 '''
 
-def get_details(credit_id):
+def details(credit_id):
     '''
     Get a movie or TV credit details by id.
 

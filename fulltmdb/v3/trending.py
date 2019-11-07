@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the trending tab in https://developers.themoviedb.org/3/trending
 '''
 
-def get_trending(media_type, time_window):
+def trending(media_type, time_window):
     '''
     Get the daily or weekly trending items.
     The daily trending list tracks items over the period of a day while items have a 24 hour half life.

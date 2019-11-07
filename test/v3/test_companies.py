@@ -3,14 +3,14 @@ from fulltmdb import companies
 
 
 class CompaniesTest(unittest.TestCase):
-    def test_get_details(self):
-        result = companies.get_details(1)
+    def test_details(self):
+        result = companies.details(1)
         self.assertTrue('id' in result)
 
-    def test_get_alternative_names(self):
-        result = companies.get_alternative_names(1)
+    def test_alternative_names(self):
+        result = companies.alternative_names(1)
         self.assertTrue('id' in result)
 
-    def test_get_images(self):
-        result = companies.get_images(1)
+    def test_images(self):
+        result = companies.images(1)
         self.assertTrue('id' in result)

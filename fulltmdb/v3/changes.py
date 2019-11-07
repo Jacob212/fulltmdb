@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the changes tab in https://developers.themoviedb.org/3/changes
 '''
 
-def get_movie_change_list(**kwargs):
+def movie(**kwargs):
     '''
     Get a list of all of the movie ids that have been changed in the past 24 hours.
     You can query it for up to 14 days worth of changed IDs at a time with the start_date and end_date query parameters.
@@ -21,7 +21,7 @@ def get_movie_change_list(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/changes', params=kwargs, headers=headers)
 
-def get_tv_change_list(**kwargs):
+def tv(**kwargs):
     '''
     Get a list of all of the TV show ids that have been changed in the past 24 hours.
     You can query it for up to 14 days worth of changed IDs at a time with the start_date and end_date query parameters.
@@ -38,7 +38,7 @@ def get_tv_change_list(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/changes', params=kwargs, headers=headers)
 
-def get_person_change_list(**kwargs):
+def person(**kwargs):
     '''
     Get a list of all of the person ids that have been changed in the past 24 hours.
     You can query it for up to 14 days worth of changed IDs at a time with the start_date and end_date query parameters.

@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the search tab in https://developers.themoviedb.org/3/search
 '''
 
-def search_companies(**kwargs):
+def companies(**kwargs):
     '''
     Search for companies.
 
@@ -19,7 +19,7 @@ def search_companies(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs, headers=headers)
 
-def search_collections(**kwargs):
+def collections(**kwargs):
     '''
     Search for collections.
 
@@ -34,7 +34,7 @@ def search_collections(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs, headers=headers)
 
-def search_keywords(**kwargs):
+def keywords(**kwargs):
     '''
     Search for keywords.
 
@@ -49,7 +49,7 @@ def search_keywords(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs, headers=headers)
 
-def search_movies(**kwargs):
+def movies(**kwargs):
     '''
     Search for movies.
 
@@ -64,7 +64,7 @@ def search_movies(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs, headers=headers)
 
-def multi_search(**kwargs):
+def multi(**kwargs):
     '''
     Search multiple models in a single request.
     Multi search currently supports searching for movies, tv shows and people in a single request.
@@ -80,7 +80,7 @@ def multi_search(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs, headers=headers)
 
-def search_people(**kwargs):
+def people(**kwargs):
     '''
     Search for people.
 
@@ -95,7 +95,7 @@ def search_people(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs, headers=headers)
 
-def search_tv_shows(**kwargs):
+def tv(**kwargs):
     '''
     Search for a TV show.
 

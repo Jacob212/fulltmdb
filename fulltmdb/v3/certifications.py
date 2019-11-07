@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the cerifications tab in https://developers.themoviedb.org/3/cerifications
 '''
 
-def get_movie_certifications():
+def movie():
     '''
     Get an up to date list of the officially supported movie certifications on TMDb.
 
@@ -19,7 +19,7 @@ def get_movie_certifications():
 
     return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=headers)
 
-def get_tv_certifications():
+def tv():
     '''
     Get an up to date list of the officially supported TV show certifications on TMDb.
 

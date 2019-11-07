@@ -3,14 +3,14 @@ from fulltmdb import collections
 
 
 class CollectionsTest(unittest.TestCase):
-    def test_get_details(self):
-        result = collections.get_details(10)
+    def test_details(self):
+        result = collections.details(10)
         self.assertTrue('id' in result)
 
-    def test_get_images(self):
-        result = collections.get_images(10)
+    def test_images(self):
+        result = collections.images(10)
         self.assertTrue('id' in result)
 
-    def test_get_translations(self):
-        result = collections.get_translations(10)
+    def test_translations(self):
+        result = collections.translations(10)
         self.assertTrue('id' in result)

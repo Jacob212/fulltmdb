@@ -3,10 +3,10 @@ from fulltmdb import certifications
 
 
 class CertificationsTest(unittest.TestCase):
-    def test_get_movie_certifications(self):
-        result = certifications.get_movie_certifications()
+    def test_movie(self):
+        result = certifications.movie()
         self.assertTrue('certifications' in result)
 
-    def test_get_tv_certifications(self):
-        result = certifications.get_tv_certifications()
+    def test_tv(self):
+        result = certifications.tv()
         self.assertTrue('certifications' in result)

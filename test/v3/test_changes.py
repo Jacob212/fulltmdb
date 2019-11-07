@@ -3,14 +3,14 @@ from fulltmdb import changes
 
 
 class ChangesTest(unittest.TestCase):
-    def test_get_movie_change_list(self):
-        result = changes.get_movie_change_list()
+    def test_movie(self):
+        result = changes.movie()
         self.assertTrue('results' in result)
 
-    def test_get_tv_change_list(self):
-        result = changes.get_tv_change_list()
+    def test_tv(self):
+        result = changes.tv()
         self.assertTrue('results' in result)
 
-    def test_get_person_change_list(self):
-        result = changes.get_person_change_list()
+    def test_person(self):
+        result = changes.person()
         self.assertTrue('results' in result)

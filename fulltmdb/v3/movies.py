@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the movies tab in https://developers.themoviedb.org/3/movies
 '''
 
-def get_details(movie_id, **kwargs):
+def details(movie_id, **kwargs):
     '''
     Get the primary information about a movie.
     Supports append_to_response. https://developers.themoviedb.org/3/getting-started/append-to-response
@@ -20,7 +20,7 @@ def get_details(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}', params=kwargs, headers=headers)
 
-def get_account_states(movie_id, **kwargs):
+def account_states(movie_id, **kwargs):
     '''
     Grab the following account states for a session:
         Movie rating
@@ -38,7 +38,7 @@ def get_account_states(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/account_states', params=kwargs, headers=headers)
 
-def get_alternative_titles(movie_id, **kwargs):
+def alternative_titles(movie_id, **kwargs):
     '''
     Get all of the alternative titles for a movie.
 
@@ -53,7 +53,7 @@ def get_alternative_titles(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/alternative_titles', params=kwargs, headers=headers)
 
-def get_changes(movie_id, **kwargs):
+def changes(movie_id, **kwargs):
     '''
     Get the changes for a movie. By default only the last 24 hours are returned.
     You can query up to 14 days in a single query by using the start_date and end_date query parameters.
@@ -69,7 +69,7 @@ def get_changes(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/changes', params=kwargs, headers=headers)
 
-def get_credits(movie_id):
+def credits(movie_id):
     '''
     Get the cast and crew for a movie.
 
@@ -84,7 +84,7 @@ def get_credits(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/credits', headers=headers)
 
-def get_external_ids(movie_id):
+def external_ids(movie_id):
     '''
     Get the external ids for a movie. We currently support the following external sources.
 
@@ -106,7 +106,7 @@ def get_external_ids(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/external_ids', headers=headers)
 
-def get_images(movie_id, **kwargs):
+def images(movie_id, **kwargs):
     '''
     Get the images that belong to a movie.
     Querying images with a language parameter will filter the results.
@@ -124,7 +124,7 @@ def get_images(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/images', params=kwargs, headers=headers)
 
-def get_keywords(movie_id):
+def keywords(movie_id):
     '''
     Get the keywords that have been added to a movie.
 
@@ -139,7 +139,7 @@ def get_keywords(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/keywords', headers=headers)
 
-def get_release_dates(movie_id):
+def release_dates(movie_id):
     '''
     Get the release date along with the certification for a movie.
     Release dates support different types:
@@ -161,7 +161,7 @@ def get_release_dates(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/release_dates', headers=headers)
 
-def get_videos(movie_id, **kwargs):
+def videos(movie_id, **kwargs):
     '''
     Get the videos that have been added to a movie.
 
@@ -176,7 +176,7 @@ def get_videos(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/videos', params=kwargs, headers=headers)
 
-def get_translations(movie_id):
+def translations(movie_id):
     '''
     Get a list of translations that have been created for a movie.
 
@@ -191,7 +191,7 @@ def get_translations(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/translations', headers=headers)
 
-def get_recommendations(movie_id, **kwargs):
+def recommendations(movie_id, **kwargs):
     '''
     Get a list of recommended movies for a movie.
 
@@ -206,7 +206,7 @@ def get_recommendations(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/recommendations', params=kwargs, headers=headers)
 
-def get_similar_movies(movie_id, **kwargs):
+def similar(movie_id, **kwargs):
     '''
     Get a list of similar movies. This is not the same as the 'Recommendation' system you see on the website.
     These items are assembled by looking at keywords and genres.
@@ -222,7 +222,7 @@ def get_similar_movies(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/similar', params=kwargs, headers=headers)
 
-def get_reviews(movie_id, **kwargs):
+def reviews(movie_id, **kwargs):
     '''
     Get the user reviews for a movie.
 
@@ -237,7 +237,7 @@ def get_reviews(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/reviews', params=kwargs, headers=headers)
 
-def get_lists(movie_id, **kwargs):
+def lists(movie_id, **kwargs):
     '''
     Get a list of lists that this movie belongs to.
 
@@ -252,7 +252,7 @@ def get_lists(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/lists', params=kwargs, headers=headers)
 
-def get_latest(**kwargs):
+def latest(**kwargs):
     '''
     Get the most newly created movie. This is a live response and will continuously change.
 
@@ -267,7 +267,7 @@ def get_latest(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/latest', params=kwargs, headers=headers)
 
-def get_now_playing(**kwargs):
+def now_playing(**kwargs):
     '''
     Get a list of movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
     You can optionally specify a region prameter which will narrow the search to only look for theatrical release dates within the specified country.
@@ -283,7 +283,7 @@ def get_now_playing(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/now_playing', params=kwargs, headers=headers)
 
-def get_popular(**kwargs):
+def popular(**kwargs):
     '''
     Get a list of the current popular movies on TMDb. This list updates daily.
 
@@ -298,7 +298,7 @@ def get_popular(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/popular', params=kwargs, headers=headers)
 
-def get_top_rated(**kwargs):
+def top_rated(**kwargs):
     '''
     Get the top rated movies on TMDb.
 
@@ -313,7 +313,7 @@ def get_top_rated(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/top_rated', params=kwargs, headers=headers)
 
-def get_upcoming(**kwargs):
+def upcoming(**kwargs):
     '''
     Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
     You can optionally specify a region prameter which will narrow the search to only look for theatrical release dates within the specified country.

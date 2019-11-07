@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the tv episodes tab in https://developers.themoviedb.org/3/tv-episodes
 '''
 
-def get_details(tv_id, season_number, episode_number, **kwargs):
+def details(tv_id, season_number, episode_number, **kwargs):
     '''
     Get the TV episode details by id.
     Supports append_to_response. https://developers.themoviedb.org/3/getting-started/append-to-response
@@ -20,7 +20,7 @@ def get_details(tv_id, season_number, episode_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', params=kwargs, headers=headers)
 
-def get_changes(episode_id, **kwargs):
+def changes(episode_id, **kwargs):
     '''
     Get the changes for a TV episode. By default only the last 24 hours are returned.
     You can query up to 14 days in a single query by using the start_date and end_date query parameters.
@@ -36,7 +36,7 @@ def get_changes(episode_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', params=kwargs, headers=headers)
 
-def get_account_states(tv_id, season_number, episode_number, **kwargs):
+def account_states(tv_id, season_number, episode_number, **kwargs):
     '''
     Get your rating for a episode.
 
@@ -51,7 +51,7 @@ def get_account_states(tv_id, season_number, episode_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', params=kwargs, headers=headers)
 
-def get_credits(tv_id, season_number, episode_number, **kwargs):
+def credits(tv_id, season_number, episode_number, **kwargs):
     '''
     Get the credits (cast, crew and guest stars) for a TV episode.
 
@@ -66,7 +66,7 @@ def get_credits(tv_id, season_number, episode_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', params=kwargs, headers=headers)
 
-def get_external_ids(tv_id, season_number, episode_number, **kwargs):
+def external_ids(tv_id, season_number, episode_number, **kwargs):
     '''
     Get the external ids for a TV episode. We currently support the following external sources.
 
@@ -90,7 +90,7 @@ def get_external_ids(tv_id, season_number, episode_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', params=kwargs, headers=headers)
 
-def get_images(tv_id, season_number, episode_number):
+def images(tv_id, season_number, episode_number):
     '''
     Get the images that belong to a TV episode.
     Querying images with a language parameter will filter the results.
@@ -108,7 +108,7 @@ def get_images(tv_id, season_number, episode_number):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images', headers=headers)
 
-def get_translations(tv_id, season_number, episode_number):
+def translations(tv_id, season_number, episode_number):
     '''
     Get the videos that have been added to a TV episode.
 
@@ -157,7 +157,7 @@ def delete_rating(tv_id, season_number, episode_number, **kwargs):
 
     return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, headers=headers)
 
-def get_videos(tv_id, season_number, episode_number, **kwargs):
+def videos(tv_id, season_number, episode_number, **kwargs):
     '''
     Get the videos that have been added to a TV episode.
 

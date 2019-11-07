@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the account tab in https://developers.themoviedb.org/4/account
 '''
 
-def get_lists(account_id, **kwargs):
+def lists(account_id, **kwargs):
     '''
     Get all of the lists you've created.
 
@@ -19,7 +19,7 @@ def get_lists(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/lists', params=kwargs, headers=headers)
 
-def get_favorite_movies(account_id, **kwargs):
+def favorite_movies(account_id, **kwargs):
     '''
     Get the list of movies you have marked as a favorite.
 
@@ -34,7 +34,7 @@ def get_favorite_movies(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/favorites', params=kwargs, headers=headers)
 
-def get_favorite_tv_shows(account_id, **kwargs):
+def favorite_tv(account_id, **kwargs):
     '''
     Get the list of TV shows you have marked as a favorite.
 
@@ -49,7 +49,7 @@ def get_favorite_tv_shows(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/favorites', params=kwargs, headers=headers)
 
-def get_movie_recommendations(account_id, **kwargs):
+def movie_recommendations(account_id, **kwargs):
     '''
     Get a list of your personal movie recommendations.
 
@@ -64,7 +64,7 @@ def get_movie_recommendations(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/recommendations', params=kwargs, headers=headers)
 
-def get_tv_show_recommendations(account_id, **kwargs):
+def tv_recommendations(account_id, **kwargs):
     '''
     Get a list of your personal TV show recommendations.
 
@@ -79,7 +79,7 @@ def get_tv_show_recommendations(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/recommendations', params=kwargs, headers=headers)
 
-def get_movie_watchlist(account_id, **kwargs):
+def movie_watchlist(account_id, **kwargs):
     '''
     Get the list of movies you have added to your watchlist.
 
@@ -94,7 +94,7 @@ def get_movie_watchlist(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/watchlist', params=kwargs, headers=headers)
 
-def get_tv_show_watchlist(account_id, **kwargs):
+def tv_watchlist(account_id, **kwargs):
     '''
     Get the list of TV shows you have added to your watchlist.
 
@@ -109,7 +109,7 @@ def get_tv_show_watchlist(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/watchlist', params=kwargs, headers=headers)
 
-def get_rated_movies(account_id, **kwargs):
+def rated_movies(account_id, **kwargs):
     '''
     Get the list of movies you have rated.
 
@@ -124,7 +124,7 @@ def get_rated_movies(account_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/rated', params=kwargs, headers=headers)
 
-def get_rated_tv_shows(account_id, **kwargs):
+def rated_tv(account_id, **kwargs):
     '''
     Get the list of TV shows you have rated.
 

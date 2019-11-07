@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the companies tab in https://developers.themoviedb.org/3/companies
 '''
 
-def get_details(company_id):
+def details(company_id):
     '''
     Get a companies details by id.
 
@@ -19,7 +19,7 @@ def get_details(company_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', headers=headers)
 
-def get_alternative_names(company_id):
+def alternative_names(company_id):
     '''
     Get the alternative names of a company.
 
@@ -34,7 +34,7 @@ def get_alternative_names(company_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', headers=headers)
 
-def get_images(company_id):
+def images(company_id):
     '''
     Get a companies logos by id.
 

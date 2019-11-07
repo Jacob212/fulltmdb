@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the lists tab in https://developers.themoviedb.org/3/lists
 '''
 
-def get_details(list_id, **kwargs):
+def details(list_id, **kwargs):
     '''
     Get the details of a list.
 

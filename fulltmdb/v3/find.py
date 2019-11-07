@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the find tab in https://developers.themoviedb.org/3/find
 '''
 
-def find_by_id(external_id, **kwargs):
+def id(external_id, **kwargs):
     '''
     The find method makes it easy to search for objects in our database by an external id. For example, an IMDB ID.
     This method will search all objects (movies, TV shows and people) and return the results in a single response.

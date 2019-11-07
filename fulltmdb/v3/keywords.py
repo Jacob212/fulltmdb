@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the keywords tab in https://developers.themoviedb.org/3/keywords
 '''
 
-def get_details(keyword_id):
+def details(keyword_id):
     '''
     Gets name and id of keyword
 
@@ -19,7 +19,7 @@ def get_details(keyword_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}', headers=headers)
 
-def get_movies(keyword_id, **kwargs):
+def movies(keyword_id, **kwargs):
     '''
     Get the movies that belong to a keyword.
     We highly recommend using https://developers.themoviedb.org/3/discover/movie-discover instead of this method as it is much more flexible.

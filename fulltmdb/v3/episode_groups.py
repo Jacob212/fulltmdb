@@ -4,7 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the tv episode groups tab in https://developers.themoviedb.org/3/tv-episode-groups
 '''
 
-def get_details(group_id, **kwargs):
+def details(group_id, **kwargs):
     '''
     Get the details of a TV episode group. Groups support 7 different types which are enumerated as the following:
 
