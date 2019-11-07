@@ -31,4 +31,4 @@ def get_trending(media_type, time_window):
         'content-type': 'application/json;charset=utf-8'
         }
 
-    return _call('GET', f'https://api.themoviedb.org/3/{media_type}/{time_window}', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/trending/{media_type}/{time_window}', headers=headers)
