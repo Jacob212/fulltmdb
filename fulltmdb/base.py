@@ -28,7 +28,8 @@ def _get_url():
 def _get_obj(result):
     if "success" in result and result["success"] is False:
         raise Exception(result["status_message"])
-    
+    if type(result) is list: 
+        return result
     return _AsObj(**result)
 
 def _call(request_type, url, headers=None, params=None, payload=None, disable_cache=None):
