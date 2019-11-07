@@ -20,7 +20,7 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=['requests', 'requests_cache'],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
