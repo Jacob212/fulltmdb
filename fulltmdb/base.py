@@ -3,15 +3,17 @@ from os import environ
 from requests import request
 import requests_cache
 
-requests_cache.install_cache(cache_name='TMDB-cache', backend='sqlite', expire_after=3600)
 environ['remaining'] = '40'
 
 class Setup():
-    def purge_cache():
-        requests_cache.remove_expired_responses()
-
     def set_read_access_token(access_token):
         environ['TMDB_READ_ACCESS_TOKEN'] = access_token
+
+    def set_cache(expire_after):
+        requests_cache.install_cache(cache_name='TMDB-cache', backend='sqlite', expire_after=expire_after)
+
+    def purge_cache():
+        requests_cache.remove_expired_responses()
 
 def _get_read_access_token():
     return environ.get('TMDB_READ_ACCESS_TOKEN')
