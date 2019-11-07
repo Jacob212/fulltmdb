@@ -27,7 +27,7 @@ from fulltmdb import setup, movies
 setup.set_read_access_token('YOUR_READ_ACCESS_TOKEN')
 setup.set_cache(3600)#Set the cache expire time. If you don't want to cache then remove this line.
 
-result = movies.get_popular()
+result = movies.popular()
 #returns a dictionary object with page, results, total_results and total_pages as keys.
 ```
 
