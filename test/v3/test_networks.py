@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import networks
 
+
 class NetworksTest(unittest.TestCase):
     def test_get_details(self):
         result = networks.get_details(213)

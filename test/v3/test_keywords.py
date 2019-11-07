@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import keywords
 
+
 class KeywordsTest(unittest.TestCase):
     def test_get_details(self):
         result = keywords.get_details(3417)

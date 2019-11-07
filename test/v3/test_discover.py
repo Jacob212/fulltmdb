@@ -1,7 +1,8 @@
 import unittest
 from fulltmdb import discover
 
-#alot more tests to add here
+# alot more tests to add here
+
 
 class DiscoverTest(unittest.TestCase):
     def test_get_details(self):

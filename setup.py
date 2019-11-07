@@ -7,19 +7,19 @@ def read(fname):
 
 
 setup(
-    name = 'fulltmdb',
-    version = '0.0.1',
-    author = 'Jacob Hale',
-    author_email = 'jacobhale.hale@gmail.com',
-    description = ('A wrapper for The Movie Database API v3 and v4.'),
-    keywords = ['tmdb', 'api-wrapper'],
-    url = 'https://github.com/Jacob212/fulltmdb',
+    name='fulltmdb',
+    version='0.0.1',
+    author='Jacob Hale',
+    author_email='jacobhale.hale@gmail.com',
+    description=('A wrapper for The Movie Database API v3 and v4.'),
+    keywords=['tmdb', 'api-wrapper'],
+    url='https://github.com/Jacob212/fulltmdb',
     packages=['fulltmdb'],
     test_suite='test',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     install_requires=['requests', 'requests_cache'],
-    classifiers = [
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',

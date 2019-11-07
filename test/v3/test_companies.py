@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import companies
 
+
 class CompaniesTest(unittest.TestCase):
     def test_get_details(self):
         result = companies.get_details(1)

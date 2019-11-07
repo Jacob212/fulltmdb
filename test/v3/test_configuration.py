@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import configuration
 
+
 class ConfigurationTest(unittest.TestCase):
     def test_get_api_configuration(self):
         result = configuration.get_api_configuration()

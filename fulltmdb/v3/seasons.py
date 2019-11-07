@@ -4,6 +4,7 @@ from ..base import _call, _get_read_access_token
 All api requests under the tv seasons tab in https://developers.themoviedb.org/3/tv-seasons
 '''
 
+
 def get_details(tv_id, season_number, **kwargs):
     '''
     Get the TV season details by id.
@@ -19,6 +20,7 @@ def get_details(tv_id, season_number, **kwargs):
         }
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}', params=kwargs, headers=headers)
+
 
 def get_changes(season_id, **kwargs):
     '''
@@ -37,6 +39,7 @@ def get_changes(season_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/season/{season_id}/changes', params=kwargs, headers=headers)
 
+
 def get_account_states(tv_id, season_number, **kwargs):
     '''
     Returns all of the user ratings for the season's episodes.
@@ -52,6 +55,7 @@ def get_account_states(tv_id, season_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/account_states', params=kwargs, headers=headers)
 
+
 def get_credits(tv_id, season_number, **kwargs):
     '''
     Get the credits (cast and crew) that have been added to a TV show.
@@ -66,6 +70,7 @@ def get_credits(tv_id, season_number, **kwargs):
         }
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits', params=kwargs, headers=headers)
+
 
 def get_external_ids(tv_id, season_number, **kwargs):
     '''
@@ -90,6 +95,7 @@ def get_external_ids(tv_id, season_number, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/external_ids', params=kwargs, headers=headers)
 
+
 def get_images(tv_id, season_number, **kwargs):
     '''
     Get the images that belong to a TV season.
@@ -107,6 +113,7 @@ def get_images(tv_id, season_number, **kwargs):
         }
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images', params=kwargs, headers=headers)
+
 
 def get_videos(tv_id, season_number, **kwargs):
     '''

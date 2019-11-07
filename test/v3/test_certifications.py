@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import certifications
 
+
 class CertificationsTest(unittest.TestCase):
     def test_get_movie_certifications(self):
         result = certifications.get_movie_certifications()

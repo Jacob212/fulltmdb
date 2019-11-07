@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import changes
 
+
 class ChangesTest(unittest.TestCase):
     def test_get_movie_change_list(self):
         result = changes.get_movie_change_list()

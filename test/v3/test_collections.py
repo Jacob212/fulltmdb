@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import collections
 
+
 class CollectionsTest(unittest.TestCase):
     def test_get_details(self):
         result = collections.get_details(10)
