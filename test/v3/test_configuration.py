@@ -4,7 +4,7 @@ from fulltmdb import configuration
 class ConfigurationTest(unittest.TestCase):
     def test_get_api_configuration(self):
         result = configuration.get_api_configuration()
-        self.assertTrue(hasattr(result, 'images'))
+        self.assertTrue('images' in result)
 
     def test_get_countries(self):
         result = configuration.get_countries()
