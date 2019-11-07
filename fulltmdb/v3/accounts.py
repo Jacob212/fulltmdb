@@ -75,7 +75,7 @@ def mark_as_favorite(account_id, session_id, media_type, media_id):
     payload = {
         'media_type': media_type,
         'media_id': media_id,
-        'favorite': true
+        'favorite': True
         }
 
     headers = {

@@ -397,4 +397,4 @@ def delete_rating(tv_id, **kwargs):
         'content-type': 'application/json;charset=utf-8'
         }
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=headers, payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=headers)
