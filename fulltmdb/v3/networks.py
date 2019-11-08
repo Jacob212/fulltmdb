@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the networks tab in https://developers.themoviedb.org/3/networks
@@ -13,12 +13,7 @@ def details(network_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}', headers=_headers)
 
 
 def alternative_names(network_id):
@@ -29,12 +24,7 @@ def alternative_names(network_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names', headers=_headers)
 
 
 def images(network_id):
@@ -54,9 +44,4 @@ def images(network_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images', headers=_headers)

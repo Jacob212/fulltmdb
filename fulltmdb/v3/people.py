@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the people tab in https://developers.themoviedb.org/3/people
@@ -13,12 +13,7 @@ def details(person_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=_headers)
 
 def changes(person_id, **kwargs):
     '''
@@ -29,12 +24,7 @@ def changes(person_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/changes', params=kwargs, headers=_headers)
 
 def movie_credits(person_id, **kwargs):
     '''
@@ -44,12 +34,7 @@ def movie_credits(person_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/movie_credits', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/movie_credits', params=kwargs, headers=_headers)
 
 def combined_credits(person_id, **kwargs):
     '''
@@ -59,12 +44,7 @@ def combined_credits(person_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/combined_credits', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/combined_credits', params=kwargs, headers=_headers)
 
 def external_ids(person_id, **kwargs):
     '''
@@ -82,12 +62,7 @@ def external_ids(person_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/external_ids', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/external_ids', params=kwargs, headers=_headers)
 
 def images(person_id):
     '''
@@ -97,12 +72,7 @@ def images(person_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/images', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/images', headers=_headers)
 
 def details(person_id, **kwargs):
     '''
@@ -113,12 +83,7 @@ def details(person_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=_headers)
 
 def tagged_images(person_id, **kwargs):
     '''
@@ -128,12 +93,7 @@ def tagged_images(person_id, **kwargs):
     optional: language, page
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/tagged_images', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/tagged_images', params=kwargs, headers=_headers)
 
 def translations(person_id, **kwargs):
     '''
@@ -143,12 +103,7 @@ def translations(person_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/translations', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/translations', params=kwargs, headers=_headers)
 
 def latest(**kwargs):
     '''
@@ -158,12 +113,7 @@ def latest(**kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/latest', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/latest', params=kwargs, headers=_headers)
 
 def popular(**kwargs):
     '''
@@ -173,9 +123,4 @@ def popular(**kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/popular', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/popular', params=kwargs, headers=_headers)

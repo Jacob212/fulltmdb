@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the account tab in https://developers.themoviedb.org/4/account
@@ -12,12 +12,7 @@ def lists(account_id, **kwargs):
     optional: page
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/lists', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/lists', params=kwargs, headers=_headers)
 
 def favorite_movies(account_id, **kwargs):
     '''
@@ -27,12 +22,7 @@ def favorite_movies(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/favorites', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/favorites', params=kwargs, headers=_headers)
 
 def favorite_tv(account_id, **kwargs):
     '''
@@ -42,12 +32,7 @@ def favorite_tv(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/favorites', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/favorites', params=kwargs, headers=_headers)
 
 def movie_recommendations(account_id, **kwargs):
     '''
@@ -57,12 +42,7 @@ def movie_recommendations(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/recommendations', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/recommendations', params=kwargs, headers=_headers)
 
 def tv_recommendations(account_id, **kwargs):
     '''
@@ -72,12 +52,7 @@ def tv_recommendations(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/recommendations', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/recommendations', params=kwargs, headers=_headers)
 
 def movie_watchlist(account_id, **kwargs):
     '''
@@ -87,12 +62,7 @@ def movie_watchlist(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/watchlist', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/watchlist', params=kwargs, headers=_headers)
 
 def tv_watchlist(account_id, **kwargs):
     '''
@@ -102,12 +72,7 @@ def tv_watchlist(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/watchlist', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/watchlist', params=kwargs, headers=_headers)
 
 def rated_movies(account_id, **kwargs):
     '''
@@ -117,12 +82,7 @@ def rated_movies(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/rated', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/rated', params=kwargs, headers=_headers)
 
 def rated_tv(account_id, **kwargs):
     '''
@@ -132,9 +92,4 @@ def rated_tv(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/rated', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/rated', params=kwargs, headers=_headers)

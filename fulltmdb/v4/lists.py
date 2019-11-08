@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call
 
 '''
 All api requests under the list tab in https://developers.themoviedb.org/4/list

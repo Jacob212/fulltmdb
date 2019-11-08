@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the search tab in https://developers.themoviedb.org/3/search
@@ -12,12 +12,7 @@ def companies(**kwargs):
     optional: page
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs, headers=_headers)
 
 def collections(**kwargs):
     '''
@@ -27,12 +22,7 @@ def collections(**kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs, headers=_headers)
 
 def keywords(**kwargs):
     '''
@@ -42,12 +32,7 @@ def keywords(**kwargs):
     optional: page
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs, headers=_headers)
 
 def movies(**kwargs):
     '''
@@ -57,12 +42,7 @@ def movies(**kwargs):
     optional: page, language, include_adult, region, year, primary_release_year
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs, headers=_headers)
 
 def multi(**kwargs):
     '''
@@ -73,12 +53,7 @@ def multi(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs, headers=_headers)
 
 def people(**kwargs):
     '''
@@ -88,12 +63,7 @@ def people(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs, headers=_headers)
 
 def tv(**kwargs):
     '''
@@ -103,9 +73,4 @@ def tv(**kwargs):
     optional: page, language, first_air_date_year
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/search/tv', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/tv', params=kwargs, headers=_headers)

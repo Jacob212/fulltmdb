@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the companies tab in https://developers.themoviedb.org/3/companies
@@ -12,12 +12,7 @@ def details(company_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', headers=_headers)
 
 def alternative_names(company_id):
     '''
@@ -27,12 +22,7 @@ def alternative_names(company_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', headers=_headers)
 
 def images(company_id):
     '''
@@ -49,9 +39,4 @@ def images(company_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images', headers=_headers)

@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the tv episodes tab in https://developers.themoviedb.org/3/tv-episodes
@@ -13,12 +13,7 @@ def details(tv_id, season_number, episode_number, **kwargs):
     optional: language, append_to_response
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', params=kwargs, headers=_headers)
 
 def changes(episode_id, **kwargs):
     '''
@@ -29,12 +24,7 @@ def changes(episode_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', params=kwargs, headers=_headers)
 
 def account_states(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -44,12 +34,7 @@ def account_states(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', params=kwargs, headers=_headers)
 
 def credits(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -59,12 +44,7 @@ def credits(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', params=kwargs, headers=_headers)
 
 def external_ids(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -83,12 +63,7 @@ def external_ids(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', params=kwargs, headers=_headers)
 
 def images(tv_id, season_number, episode_number):
     '''
@@ -101,12 +76,7 @@ def images(tv_id, season_number, episode_number):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images', headers=_headers)
 
 def translations(tv_id, season_number, episode_number):
     '''
@@ -116,12 +86,7 @@ def translations(tv_id, season_number, episode_number):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations', headers=_headers)
 
 def rate_episode(tv_id, season_number, episode_number, payload, **kwargs):
     '''
@@ -133,12 +98,7 @@ def rate_episode(tv_id, season_number, episode_number, payload, **kwargs):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, headers=_headers, payload=payload)
 
 def delete_rating(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -150,12 +110,7 @@ def delete_rating(tv_id, season_number, episode_number, **kwargs):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, headers=headers)
+    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, headers=_headers)
 
 def videos(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -165,9 +120,4 @@ def videos(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos', params=kwargs, headers=_headers)

@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the lists tab in https://developers.themoviedb.org/3/lists
@@ -12,12 +12,7 @@ def details(list_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/list/{list_id}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/list/{list_id}', params=kwargs, headers=_headers)
 
 def check_item_status(list_id, **kwargs):
     '''
@@ -27,12 +22,7 @@ def check_item_status(list_id, **kwargs):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/list/{list_id}/item_status', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/list/{list_id}/item_status', params=kwargs, headers=_headers)
 
 def create_list(session_id, name, description='', language='en'):
     '''
@@ -47,12 +37,7 @@ def create_list(session_id, name, description='', language='en'):
         'language': language
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/list?session_id={session_id}', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/list?session_id={session_id}', headers=_headers, payload=payload)
 
 def add_movie(list_id, session_id, media_id):
     '''
@@ -65,12 +50,7 @@ def add_movie(list_id, session_id, media_id):
         'media_id': media_id
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/add_item?session_id={session_id}', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/add_item?session_id={session_id}', headers=_headers, payload=payload)
 
 def remove_movie(list_id, session_id, media_id):
     '''
@@ -83,12 +63,7 @@ def remove_movie(list_id, session_id, media_id):
         'media_id': media_id
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/remove_item?session_id={session_id}', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/remove_item?session_id={session_id}', headers=_headers, payload=payload)
 
 def clear_list(list_id, session_id, confirm="true"):
     '''
@@ -98,12 +73,7 @@ def clear_list(list_id, session_id, confirm="true"):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/clear?session_id={session_id}&confirm={confirm}', headers=headers)
+    return _call('POST', f'https://api.themoviedb.org/3/list/{list_id}/clear?session_id={session_id}&confirm={confirm}', headers=_headers)
 
 def delete_list(list_id, session_id):
     '''
@@ -113,9 +83,4 @@ def delete_list(list_id, session_id):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/3/list/{list_id}?session_id={session_id}', headers=headers)
+    return _call('DELETE', f'https://api.themoviedb.org/3/list/{list_id}?session_id={session_id}', headers=_headers)

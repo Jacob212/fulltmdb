@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the auth tab in https://developers.themoviedb.org/4/auth
@@ -21,12 +21,7 @@ def create_request_token(redirect_to=''):
         'redirect_to': redirect_to
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/4/auth/request_token', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/auth/request_token', headers=_headers, payload=payload)
 
 def create_access_token(request_token):
     '''
@@ -42,12 +37,7 @@ def create_access_token(request_token):
         'request_token': request_token
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/auth/access_token', headers=headers, payload=payload)
+    return _call('GET', f'https://api.themoviedb.org/4/auth/access_token', headers=_headers, payload=payload)
 
 def delete_access_token(access_token):
     '''
@@ -61,9 +51,4 @@ def delete_access_token(access_token):
         'access_token': access_token
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', headers=_headers, payload=payload)

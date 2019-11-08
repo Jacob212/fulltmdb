@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the account tab in https://developers.themoviedb.org/3/account
@@ -12,12 +12,7 @@ def details(session_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}', headers=_headers)
 
 def created_lists(account_id, **kwargs):
     '''
@@ -27,12 +22,7 @@ def created_lists(account_id, **kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', params=kwargs, headers=_headers)
 
 def favorite_movies(account_id, **kwargs):
     '''
@@ -42,12 +32,7 @@ def favorite_movies(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', params=kwargs, headers=_headers)
 
 def favorite_tv_shows(account_id, **kwargs):
     '''
@@ -57,12 +42,7 @@ def favorite_tv_shows(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', params=kwargs, headers=_headers)
 
 def mark_as_favorite(account_id, session_id, media_type, media_id):
     '''
@@ -78,12 +58,7 @@ def mark_as_favorite(account_id, session_id, media_type, media_id):
         'favorite': True
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=_headers, payload=payload)
 
 def rated_movies(account_id, **kwargs):
     '''
@@ -93,12 +68,7 @@ def rated_movies(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', params=kwargs, headers=_headers)
 
 def rated_tv(account_id, **kwargs):
     '''
@@ -108,12 +78,7 @@ def rated_tv(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', params=kwargs, headers=_headers)
 
 def rated_tv_episodes(account_id, **kwargs):
     '''
@@ -123,12 +88,7 @@ def rated_tv_episodes(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', params=kwargs, headers=_headers)
 
 def movie_watchlist(account_id, **kwargs):
     '''
@@ -138,12 +98,7 @@ def movie_watchlist(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', params=kwargs, headers=_headers)
 
 def tv_show_watchlist(account_id, **kwargs):
     '''
@@ -153,12 +108,7 @@ def tv_show_watchlist(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', params=kwargs, headers=_headers)
 
 def add_to_watchlist(account_id, session_id, media_type, media_id):
     '''
@@ -174,9 +124,4 @@ def add_to_watchlist(account_id, session_id, media_type, media_id):
         'watchlist': True
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=_headers, payload=payload)

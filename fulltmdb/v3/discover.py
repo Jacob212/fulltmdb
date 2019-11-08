@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the discover tab in https://developers.themoviedb.org/3/discover
@@ -31,12 +31,7 @@ def movie(**kwargs):
             with_people, with_companies, with_genres, without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=kwargs, headers=_headers)
 
 def tv(**kwargs):
     '''
@@ -54,9 +49,4 @@ def tv(**kwargs):
             without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language, screened_theatrically, include_null_first_air_dates
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=kwargs, headers=_headers)

@@ -18,6 +18,11 @@ class Setup():
 def _get_read_access_token():
     return environ.get('TMDB_READ_ACCESS_TOKEN')
 
+_headers = {
+        'authorization': f'Bearer {_get_read_access_token()}',
+        'content-type': 'application/json;charset=utf-8'
+        }
+
 def _check_status(result):
     if 'success' in result and result['success'] is False:
         raise Exception(result['status_message'])

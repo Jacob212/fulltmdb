@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the tv seasons tab in https://developers.themoviedb.org/3/tv-seasons
@@ -14,12 +14,7 @@ def details(tv_id, season_number, **kwargs):
     optional: language, append_to_response
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}', params=kwargs, headers=_headers)
 
 
 def changes(season_id, **kwargs):
@@ -32,12 +27,7 @@ def changes(season_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/season/{season_id}/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/season/{season_id}/changes', params=kwargs, headers=_headers)
 
 
 def account_states(tv_id, season_number, **kwargs):
@@ -48,12 +38,7 @@ def account_states(tv_id, season_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/account_states', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/account_states', params=kwargs, headers=_headers)
 
 
 def credits(tv_id, season_number, **kwargs):
@@ -64,12 +49,7 @@ def credits(tv_id, season_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits', params=kwargs, headers=_headers)
 
 
 def external_ids(tv_id, season_number, **kwargs):
@@ -88,12 +68,7 @@ def external_ids(tv_id, season_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/external_ids', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/external_ids', params=kwargs, headers=_headers)
 
 
 def images(tv_id, season_number, **kwargs):
@@ -107,12 +82,7 @@ def images(tv_id, season_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images', params=kwargs, headers=_headers)
 
 
 def videos(tv_id, season_number, **kwargs):
@@ -123,9 +93,4 @@ def videos(tv_id, season_number, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/videos', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/videos', params=kwargs, headers=_headers)

@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the cerifications tab in https://developers.themoviedb.org/3/cerifications
@@ -12,12 +12,7 @@ def movie():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=_headers)
 
 def tv():
     '''
@@ -27,9 +22,4 @@ def tv():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list', headers=_headers)

@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the keywords tab in https://developers.themoviedb.org/3/keywords
@@ -12,12 +12,7 @@ def details(keyword_id):
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}', headers=_headers)
 
 def movies(keyword_id, **kwargs):
     '''
@@ -28,9 +23,4 @@ def movies(keyword_id, **kwargs):
     optional:   language, include_adult
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', params=kwargs, headers=_headers)

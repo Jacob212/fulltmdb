@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
@@ -21,12 +21,7 @@ def api():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration', headers=_headers)
 
 def countries():
     '''
@@ -36,12 +31,7 @@ def countries():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', headers=_headers)
 
 def jobs():
     '''
@@ -51,12 +41,7 @@ def jobs():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', headers=_headers)
 
 def languages():
     '''
@@ -66,12 +51,7 @@ def languages():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', headers=_headers)
 
 def primary_translations():
     '''
@@ -91,12 +71,7 @@ def primary_translations():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', headers=_headers)
 
 def timezones():
     '''
@@ -106,9 +81,4 @@ def timezones():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones', headers=_headers)

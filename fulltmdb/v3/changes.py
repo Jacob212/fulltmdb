@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the changes tab in https://developers.themoviedb.org/3/changes
@@ -14,12 +14,7 @@ def movie(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/movie/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/changes', params=kwargs, headers=_headers)
 
 def tv(**kwargs):
     '''
@@ -31,12 +26,7 @@ def tv(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/changes', params=kwargs, headers=_headers)
 
 def person(**kwargs):
     '''
@@ -48,9 +38,4 @@ def person(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/person/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/changes', params=kwargs, headers=_headers)

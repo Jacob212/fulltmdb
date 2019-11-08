@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the tv tab in https://developers.themoviedb.org/3/tv
@@ -13,12 +13,7 @@ def details(tv_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}', params=kwargs, headers=_headers)
 
 def account_states(tv_id, **kwargs):
     '''
@@ -31,12 +26,7 @@ def account_states(tv_id, **kwargs):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/account_states', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/account_states', params=kwargs, headers=_headers)
 
 def alternative_titles(tv_id, **kwargs):
     '''
@@ -46,12 +36,7 @@ def alternative_titles(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/alternative_titles', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/alternative_titles', params=kwargs, headers=_headers)
 
 def changes(tv_id, **kwargs):
     '''
@@ -66,12 +51,7 @@ def changes(tv_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/changes', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/changes', params=kwargs, headers=_headers)
 
 def content_ratings(tv_id, **kwargs):
     '''
@@ -81,12 +61,7 @@ def content_ratings(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/content_ratings', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/content_ratings', params=kwargs, headers=_headers)
 
 def credits(tv_id, **kwargs):
     '''
@@ -96,12 +71,7 @@ def credits(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/credits', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/credits', params=kwargs, headers=_headers)
 
 def episode_groups(tv_id, **kwargs):
     '''
@@ -112,12 +82,7 @@ def episode_groups(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/episode_groups', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/episode_groups', params=kwargs, headers=_headers)
 
 def external_ids(tv_id, **kwargs):
     '''
@@ -140,12 +105,7 @@ def external_ids(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/external_ids', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/external_ids', params=kwargs, headers=_headers)
 
 def images(tv_id, **kwargs):
     '''
@@ -158,12 +118,7 @@ def images(tv_id, **kwargs):
     optional: language, include_image_language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/images', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/images', params=kwargs, headers=_headers)
 
 def keywords(tv_id):
     '''
@@ -173,12 +128,7 @@ def keywords(tv_id):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/keywords', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/keywords', headers=_headers)
 
 def recommendations(tv_id, **kwargs):
     '''
@@ -188,12 +138,7 @@ def recommendations(tv_id, **kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/recommendations', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/recommendations', params=kwargs, headers=_headers)
 
 def reviews(tv_id, **kwargs):
     '''
@@ -203,12 +148,7 @@ def reviews(tv_id, **kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/reviews', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/reviews', params=kwargs, headers=_headers)
 
 def screened_theatrically(tv_id):
     '''
@@ -218,12 +158,7 @@ def screened_theatrically(tv_id):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/screened_theatrically', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/screened_theatrically', headers=_headers)
 
 def similar(tv_id, **kwargs):
     '''
@@ -234,12 +169,7 @@ def similar(tv_id, **kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/similar', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/similar', params=kwargs, headers=_headers)
 
 def translations(tv_id, **kwargs):
     '''
@@ -249,12 +179,7 @@ def translations(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/translations', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/translations', params=kwargs, headers=_headers)
 
 def videos(tv_id, **kwargs):
     '''
@@ -264,12 +189,7 @@ def videos(tv_id, **kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/videos', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/videos', params=kwargs, headers=_headers)
 
 # def lists(tv_id, **kwargs): should this be here?
 #     '''
@@ -284,7 +204,7 @@ def videos(tv_id, **kwargs):
 #         'content-type': 'application/json;charset=utf-8'
 #         }
 
-#     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/lists', params=kwargs, headers=headers)
+#     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/lists', params=kwargs, headers=_headers)
 
 def latest(**kwargs):
     '''
@@ -294,12 +214,7 @@ def latest(**kwargs):
     optional: language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/latest', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/latest', params=kwargs, headers=_headers)
 
 def airing_today(**kwargs):
     '''
@@ -310,12 +225,7 @@ def airing_today(**kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/airing_today', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/airing_today', params=kwargs, headers=_headers)
 
 def on_the_air(**kwargs):
     '''
@@ -326,12 +236,7 @@ def on_the_air(**kwargs):
     optional: page, language, region
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/on_the_air', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/on_the_air', params=kwargs, headers=_headers)
 
 def popular(**kwargs):
     '''
@@ -341,12 +246,7 @@ def popular(**kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/popular', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/popular', params=kwargs, headers=_headers)
 
 def top_rated(**kwargs):
     '''
@@ -356,12 +256,7 @@ def top_rated(**kwargs):
     optional: page, language
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/tv/top_rated', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/top_rated', params=kwargs, headers=_headers)
 
 def rate_movie(tv_id, rating, **kwargs):
     '''
@@ -376,12 +271,7 @@ def rate_movie(tv_id, rating, **kwargs):
         'value': rating
         }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=_headers, payload=payload)
 
 def delete_rating(tv_id, **kwargs):
     '''
@@ -392,9 +282,4 @@ def delete_rating(tv_id, **kwargs):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=headers)
+    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, headers=_headers)

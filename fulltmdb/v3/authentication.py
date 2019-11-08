@@ -1,4 +1,4 @@
-from ..base import _call, _get_read_access_token
+from ..base import _call, _headers
 
 '''
 All api requests under the authentication tab in https://developers.themoviedb.org/3/authentication
@@ -21,12 +21,7 @@ def create_guest_session():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new', headers=_headers)
 
 def create_request_token():
     '''
@@ -36,12 +31,7 @@ def create_request_token():
     optional:
     '''
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new', headers=_headers)
 
 def create_request_token(request_token):
     '''
@@ -56,12 +46,7 @@ def create_request_token(request_token):
         'request_token': request_token
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', headers=_headers, payload=payload)
 
 def create_request_token(username, password, request_token):
     '''
@@ -84,12 +69,7 @@ def create_request_token(username, password, request_token):
         'request_token': request_token
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', headers=_headers, payload=payload)
 
 def create_request_token(access_token):
     '''
@@ -105,12 +85,7 @@ def create_request_token(access_token):
         'access_token': access_token
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', headers=_headers, payload=payload)
 
 def create_request_token(session_id):
     '''
@@ -124,9 +99,4 @@ def create_request_token(session_id):
         'session_id': session_id
     }
 
-    headers = {
-        'authorization': f'Bearer {_get_read_access_token()}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', headers=headers, payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', headers=_headers, payload=payload)
