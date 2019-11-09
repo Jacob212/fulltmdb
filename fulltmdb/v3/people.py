@@ -36,6 +36,16 @@ def movie_credits(person_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/movie_credits', params=kwargs)
 
+def tv_credits(person_id, **kwargs):
+    '''
+    Get the TV show credits for a person.
+
+    required: person_id
+    optional: language
+    '''
+
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/tv_credits', params=kwargs)
+
 def combined_credits(person_id, **kwargs):
     '''
     Get the movie and TV credits together in a single response.
