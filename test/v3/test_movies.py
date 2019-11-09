@@ -24,7 +24,7 @@ class MoviesTest(unittest.TestCase):
         self.assertTrue('cast' in result)
 
     def test_external_ids(self):
-        result = movies.translations(550)
+        result = movies.external_ids(550)
         self.assertTrue('id' in result)
 
     def test_images(self):
@@ -38,3 +38,56 @@ class MoviesTest(unittest.TestCase):
     def test_release_dates(self):
         result = movies.release_dates(550)
         self.assertTrue('results' in result)
+
+    def test_videos(self):
+        result = movies.videos(550)
+        self.assertTrue('results' in result)
+
+    def test_translations(self):
+        result = movies.translations(550)
+        self.assertTrue('translations' in result)
+
+    def test_recommendations(self):
+        result = movies.recommendations(550)
+        self.assertTrue('results' in result)
+
+    def test_similar(self):
+        result = movies.similar(550)
+        self.assertTrue('results' in result)
+
+    def test_reviews(self):
+        result = movies.reviews(550)
+        self.assertTrue('results' in result)
+
+    def test_lists(self):
+        result = movies.lists(550)
+        self.assertTrue('results' in result)
+
+    # def test_rate_movie(self): 
+    #     result = movies.rate_movie(550) needs session_id
+    #     self.assertTrue('results' in result)
+
+    # def test_delete_rating(self):
+    #     result = movies.delete_rating(550) needs session_id
+    #     self.assertTrue('results' in result)
+
+    def test_latest(self):
+        result = movies.latest()
+        self.assertTrue('id' in result)
+
+    def test_now_playing(self):
+        result = movies.now_playing()
+        self.assertTrue('results' in result)
+
+    def test_popular(self):
+        result = movies.popular()
+        self.assertTrue('results' in result)
+
+    def test_top_rated(self):
+        result = movies.top_rated()
+        self.assertTrue('results' in result)
+
+    def test_upcoming(self):
+        result = movies.upcoming()
+        self.assertTrue('results' in result)
+
