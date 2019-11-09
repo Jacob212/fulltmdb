@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the companies tab in https://developers.themoviedb.org/3/companies
@@ -12,7 +12,7 @@ def details(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}')
 
 def alternative_names(company_id):
     '''
@@ -22,7 +22,7 @@ def alternative_names(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names')
 
 def images(company_id):
     '''
@@ -39,4 +39,4 @@ def images(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images')

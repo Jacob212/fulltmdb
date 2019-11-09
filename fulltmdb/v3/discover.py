@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the discover tab in https://developers.themoviedb.org/3/discover
@@ -31,7 +31,7 @@ def movie(**kwargs):
             with_people, with_companies, with_genres, without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=kwargs)
 
 def tv(**kwargs):
     '''
@@ -49,4 +49,4 @@ def tv(**kwargs):
             without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language, screened_theatrically, include_null_first_air_dates
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=kwargs)

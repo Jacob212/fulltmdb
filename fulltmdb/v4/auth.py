@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the auth tab in https://developers.themoviedb.org/4/auth
@@ -21,7 +21,7 @@ def create_request_token(redirect_to=''):
         'redirect_to': redirect_to
     }
 
-    return _call('POST', f'https://api.themoviedb.org/4/auth/request_token', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/auth/request_token', payload=payload)
 
 def create_access_token(request_token):
     '''
@@ -37,7 +37,7 @@ def create_access_token(request_token):
         'request_token': request_token
     }
 
-    return _call('GET', f'https://api.themoviedb.org/4/auth/access_token', headers=_headers, payload=payload)
+    return _call('GET', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
 
 def delete_access_token(access_token):
     '''
@@ -51,4 +51,4 @@ def delete_access_token(access_token):
         'access_token': access_token
     }
 
-    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)

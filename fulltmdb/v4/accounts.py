@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the account tab in https://developers.themoviedb.org/4/account
@@ -12,7 +12,7 @@ def lists(account_id, **kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/lists', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/lists', params=kwargs)
 
 def favorite_movies(account_id, **kwargs):
     '''
@@ -22,7 +22,7 @@ def favorite_movies(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/favorites', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/favorites', params=kwargs)
 
 def favorite_tv(account_id, **kwargs):
     '''
@@ -32,7 +32,7 @@ def favorite_tv(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/favorites', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/favorites', params=kwargs)
 
 def movie_recommendations(account_id, **kwargs):
     '''
@@ -42,7 +42,7 @@ def movie_recommendations(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/recommendations', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/recommendations', params=kwargs)
 
 def tv_recommendations(account_id, **kwargs):
     '''
@@ -52,7 +52,7 @@ def tv_recommendations(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/recommendations', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/recommendations', params=kwargs)
 
 def movie_watchlist(account_id, **kwargs):
     '''
@@ -62,7 +62,7 @@ def movie_watchlist(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/watchlist', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/watchlist', params=kwargs)
 
 def tv_watchlist(account_id, **kwargs):
     '''
@@ -72,7 +72,7 @@ def tv_watchlist(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/watchlist', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/watchlist', params=kwargs)
 
 def rated_movies(account_id, **kwargs):
     '''
@@ -82,7 +82,7 @@ def rated_movies(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/rated', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/movie/rated', params=kwargs)
 
 def rated_tv(account_id, **kwargs):
     '''
@@ -92,4 +92,4 @@ def rated_tv(account_id, **kwargs):
     optional: page, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/rated', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/4/account/{account_id}/tv/rated', params=kwargs)

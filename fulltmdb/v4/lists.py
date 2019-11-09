@@ -12,12 +12,7 @@ def list(list_id, access_token, **kwargs):
     optional: page, language, sort_by
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/list/{list_id}', params=kwargs, headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/list/{list_id}', params=kwargs, bearer=access_token)
 
 def create_list(access_token, payload):
     '''
@@ -35,12 +30,7 @@ def create_list(access_token, payload):
     #     'public': public
     #     }
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/4/list', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/list', bearer=access_token, payload=payload)
 
 def update_list(access_token, list_id, payload):
     '''
@@ -56,12 +46,7 @@ def update_list(access_token, list_id, payload):
     #     'language': language
     #     }
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('PUT', f'https://api.themoviedb.org/4/list/{list_id}', headers=headers, payload=payload)
+    return _call('PUT', f'https://api.themoviedb.org/4/list/{list_id}', bearer=access_token, payload=payload)
 
 def clear_list(access_token, list_id):
     '''
@@ -73,12 +58,7 @@ def clear_list(access_token, list_id):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('GET', f'https://api.themoviedb.org/4/list/{list_id}/clear', headers=headers)
+    return _call('GET', f'https://api.themoviedb.org/4/list/{list_id}/clear', bearer=access_token)
 
 def delete_list(access_token, list_id):
     '''
@@ -89,12 +69,7 @@ def delete_list(access_token, list_id):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}', headers=headers)
+    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}', bearer=access_token)
 
 def add_items(access_token, list_id, payload):
     '''
@@ -115,12 +90,7 @@ def add_items(access_token, list_id, payload):
     #     example payload
     # }
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('POST', f'https://api.themoviedb.org/4/list/{list_id}/items', headers=headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/list/{list_id}/items', bearer=access_token, payload=payload)
 
 def update_items(access_token, list_id, payload):
     '''
@@ -132,12 +102,7 @@ def update_items(access_token, list_id, payload):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('PUT', f'https://api.themoviedb.org/4/list/{list_id}/items', headers=headers, payload=payload)
+    return _call('PUT', f'https://api.themoviedb.org/4/list/{list_id}/items', bearer=access_token, payload=payload)
 
 def remove_items(access_token, list_id, payload):
     '''
@@ -149,12 +114,7 @@ def remove_items(access_token, list_id, payload):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/items', headers=headers, payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/items', bearer=access_token, payload=payload)
 
 def check_item_status(access_token, list_id, **kwargs):
     '''
@@ -166,9 +126,4 @@ def check_item_status(access_token, list_id, **kwargs):
     optional: 
     '''
 
-    headers = {
-        'authorization': f'Bearer {access_token}',
-        'content-type': 'application/json;charset=utf-8'
-        }
-
-    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/item_status', params=kwargs, headers=headers)
+    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/item_status', params=kwargs, bearer=access_token)

@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the people tab in https://developers.themoviedb.org/3/people
@@ -13,7 +13,7 @@ def details(person_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs)
 
 def changes(person_id, **kwargs):
     '''
@@ -24,7 +24,7 @@ def changes(person_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/changes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/changes', params=kwargs)
 
 def movie_credits(person_id, **kwargs):
     '''
@@ -34,7 +34,7 @@ def movie_credits(person_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/movie_credits', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/movie_credits', params=kwargs)
 
 def combined_credits(person_id, **kwargs):
     '''
@@ -44,7 +44,7 @@ def combined_credits(person_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/combined_credits', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/combined_credits', params=kwargs)
 
 def external_ids(person_id, **kwargs):
     '''
@@ -62,7 +62,7 @@ def external_ids(person_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/external_ids', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/external_ids', params=kwargs)
 
 def images(person_id):
     '''
@@ -72,7 +72,7 @@ def images(person_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/images', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/images')
 
 def details(person_id, **kwargs):
     '''
@@ -83,7 +83,7 @@ def details(person_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}', params=kwargs)
 
 def tagged_images(person_id, **kwargs):
     '''
@@ -93,7 +93,7 @@ def tagged_images(person_id, **kwargs):
     optional: language, page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/tagged_images', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/tagged_images', params=kwargs)
 
 def translations(person_id, **kwargs):
     '''
@@ -103,7 +103,7 @@ def translations(person_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/translations', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/{person_id}/translations', params=kwargs)
 
 def latest(**kwargs):
     '''
@@ -113,7 +113,7 @@ def latest(**kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/latest', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/latest', params=kwargs)
 
 def popular(**kwargs):
     '''
@@ -123,4 +123,4 @@ def popular(**kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/popular', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/popular', params=kwargs)

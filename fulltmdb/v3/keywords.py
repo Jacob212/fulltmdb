@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the keywords tab in https://developers.themoviedb.org/3/keywords
@@ -12,7 +12,7 @@ def details(keyword_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}')
 
 def movies(keyword_id, **kwargs):
     '''
@@ -23,4 +23,4 @@ def movies(keyword_id, **kwargs):
     optional:   language, include_adult
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', params=kwargs)

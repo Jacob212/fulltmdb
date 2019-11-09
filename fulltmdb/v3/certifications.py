@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the cerifications tab in https://developers.themoviedb.org/3/cerifications
@@ -12,7 +12,7 @@ def movie():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/certification/movie/list')
 
 def tv():
     '''
@@ -22,4 +22,4 @@ def tv():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/certification/tv/list')

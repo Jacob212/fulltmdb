@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
@@ -21,7 +21,7 @@ def api():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration')
 
 def countries():
     '''
@@ -31,7 +31,7 @@ def countries():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries')
 
 def jobs():
     '''
@@ -41,7 +41,7 @@ def jobs():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs')
 
 def languages():
     '''
@@ -51,7 +51,7 @@ def languages():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages')
 
 def primary_translations():
     '''
@@ -71,7 +71,7 @@ def primary_translations():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations')
 
 def timezones():
     '''
@@ -81,4 +81,4 @@ def timezones():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones')

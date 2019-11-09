@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the credits tab in https://developers.themoviedb.org/3/credits
@@ -12,4 +12,4 @@ def details(credit_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/credit/{credit_id}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/credit/{credit_id}')

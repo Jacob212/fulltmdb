@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the genres tab in https://developers.themoviedb.org/3/genres
@@ -12,7 +12,7 @@ def movie(**kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/genre/movie/list', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/genre/movie/list', params=kwargs)
 
 def tv(**kwargs):
     '''
@@ -22,4 +22,4 @@ def tv(**kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/genre/tv/list', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/genre/tv/list', params=kwargs)

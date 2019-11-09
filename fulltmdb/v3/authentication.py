@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the authentication tab in https://developers.themoviedb.org/3/authentication
@@ -21,7 +21,7 @@ def create_guest_session():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new')
 
 def create_request_token():
     '''
@@ -31,7 +31,7 @@ def create_request_token():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new')
 
 def create_request_token(request_token):
     '''
@@ -46,7 +46,7 @@ def create_request_token(request_token):
         'request_token': request_token
     }
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', payload=payload)
 
 def create_request_token(username, password, request_token):
     '''
@@ -69,7 +69,7 @@ def create_request_token(username, password, request_token):
         'request_token': request_token
     }
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', payload=payload)
 
 def create_request_token(access_token):
     '''
@@ -85,7 +85,7 @@ def create_request_token(access_token):
         'access_token': access_token
     }
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', payload=payload)
 
 def create_request_token(session_id):
     '''
@@ -99,4 +99,4 @@ def create_request_token(session_id):
         'session_id': session_id
     }
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', headers=_headers, payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', payload=payload)

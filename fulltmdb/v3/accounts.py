@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the account tab in https://developers.themoviedb.org/3/account
@@ -12,7 +12,7 @@ def details(session_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}')
 
 def created_lists(account_id, **kwargs):
     '''
@@ -22,7 +22,7 @@ def created_lists(account_id, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', params=kwargs)
 
 def favorite_movies(account_id, **kwargs):
     '''
@@ -32,7 +32,7 @@ def favorite_movies(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', params=kwargs)
 
 def favorite_tv_shows(account_id, **kwargs):
     '''
@@ -42,7 +42,7 @@ def favorite_tv_shows(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', params=kwargs)
 
 def mark_as_favorite(account_id, session_id, media_type, media_id):
     '''
@@ -58,7 +58,7 @@ def mark_as_favorite(account_id, session_id, media_type, media_id):
         'favorite': True
         }
 
-    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', payload=payload)
 
 def rated_movies(account_id, **kwargs):
     '''
@@ -68,7 +68,7 @@ def rated_movies(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', params=kwargs)
 
 def rated_tv(account_id, **kwargs):
     '''
@@ -78,7 +78,7 @@ def rated_tv(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', params=kwargs)
 
 def rated_tv_episodes(account_id, **kwargs):
     '''
@@ -88,7 +88,7 @@ def rated_tv_episodes(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', params=kwargs)
 
 def movie_watchlist(account_id, **kwargs):
     '''
@@ -98,7 +98,7 @@ def movie_watchlist(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', params=kwargs)
 
 def tv_show_watchlist(account_id, **kwargs):
     '''
@@ -108,7 +108,7 @@ def tv_show_watchlist(account_id, **kwargs):
     optional: page, language, sort_by
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', params=kwargs)
 
 def add_to_watchlist(account_id, session_id, media_type, media_id):
     '''
@@ -124,4 +124,4 @@ def add_to_watchlist(account_id, session_id, media_type, media_id):
         'watchlist': True
         }
 
-    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', payload=payload)

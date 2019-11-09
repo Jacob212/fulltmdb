@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the networks tab in https://developers.themoviedb.org/3/networks
@@ -13,7 +13,7 @@ def details(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}')
 
 
 def alternative_names(network_id):
@@ -24,7 +24,7 @@ def alternative_names(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names')
 
 
 def images(network_id):
@@ -44,4 +44,4 @@ def images(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images')

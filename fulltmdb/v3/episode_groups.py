@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the tv episode groups tab in https://developers.themoviedb.org/3/tv-episode-groups
@@ -20,4 +20,4 @@ def details(group_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/episode_group/{group_id}', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/episode_group/{group_id}', params=kwargs)

@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the trending tab in https://developers.themoviedb.org/3/trending
@@ -26,4 +26,4 @@ def trending(media_type, time_window):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/trending/{media_type}/{time_window}', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/trending/{media_type}/{time_window}')

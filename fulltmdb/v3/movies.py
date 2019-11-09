@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the movies tab in https://developers.themoviedb.org/3/movies
@@ -13,7 +13,7 @@ def details(movie_id, **kwargs):
     optional: language, append_to_response
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}', params=kwargs)
 
 def account_states(movie_id, **kwargs):
     '''
@@ -26,7 +26,7 @@ def account_states(movie_id, **kwargs):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/account_states', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/account_states', params=kwargs)
 
 def alternative_titles(movie_id, **kwargs):
     '''
@@ -36,7 +36,7 @@ def alternative_titles(movie_id, **kwargs):
     optional: country
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/alternative_titles', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/alternative_titles', params=kwargs)
 
 def changes(movie_id, **kwargs):
     '''
@@ -47,7 +47,7 @@ def changes(movie_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/changes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/changes', params=kwargs)
 
 def credits(movie_id):
     '''
@@ -57,7 +57,7 @@ def credits(movie_id):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/credits', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/credits')
 
 def external_ids(movie_id):
     '''
@@ -74,7 +74,7 @@ def external_ids(movie_id):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/external_ids', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/external_ids')
 
 def images(movie_id, **kwargs):
     '''
@@ -87,7 +87,7 @@ def images(movie_id, **kwargs):
     optional: language, include_image_language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/images', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/images', params=kwargs)
 
 def keywords(movie_id):
     '''
@@ -97,7 +97,7 @@ def keywords(movie_id):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/keywords', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/keywords')
 
 def release_dates(movie_id):
     '''
@@ -114,7 +114,7 @@ def release_dates(movie_id):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/release_dates', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/release_dates')
 
 def videos(movie_id, **kwargs):
     '''
@@ -124,7 +124,7 @@ def videos(movie_id, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/videos', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/videos', params=kwargs)
 
 def translations(movie_id):
     '''
@@ -134,7 +134,7 @@ def translations(movie_id):
     optional: 
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/translations', headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/translations')
 
 def recommendations(movie_id, **kwargs):
     '''
@@ -144,7 +144,7 @@ def recommendations(movie_id, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/recommendations', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/recommendations', params=kwargs)
 
 def similar(movie_id, **kwargs):
     '''
@@ -155,7 +155,7 @@ def similar(movie_id, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/similar', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/similar', params=kwargs)
 
 def reviews(movie_id, **kwargs):
     '''
@@ -165,7 +165,7 @@ def reviews(movie_id, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/reviews', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/reviews', params=kwargs)
 
 def lists(movie_id, **kwargs):
     '''
@@ -175,7 +175,7 @@ def lists(movie_id, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/lists', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/lists', params=kwargs)
 
 def latest(**kwargs):
     '''
@@ -185,7 +185,7 @@ def latest(**kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/latest', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/latest', params=kwargs)
 
 def now_playing(**kwargs):
     '''
@@ -196,7 +196,7 @@ def now_playing(**kwargs):
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/now_playing', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/now_playing', params=kwargs)
 
 def popular(**kwargs):
     '''
@@ -206,7 +206,7 @@ def popular(**kwargs):
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/popular', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/popular', params=kwargs)
 
 def top_rated(**kwargs):
     '''
@@ -216,7 +216,7 @@ def top_rated(**kwargs):
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/top_rated', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/top_rated', params=kwargs)
 
 def upcoming(**kwargs):
     '''
@@ -227,7 +227,7 @@ def upcoming(**kwargs):
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/upcoming', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/upcoming', params=kwargs)
 
 def rate_movie(movie_id, rating, **kwargs):
     '''
@@ -242,7 +242,7 @@ def rate_movie(movie_id, rating, **kwargs):
         'value': rating
         }
 
-    return _call('POST', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs, headers=_headers, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs, payload=payload)
 
 def delete_rating(movie_id, **kwargs):
     '''
@@ -253,4 +253,4 @@ def delete_rating(movie_id, **kwargs):
     optional: 
     '''
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs, headers=_headers)
+    return _call('DELETE', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs)

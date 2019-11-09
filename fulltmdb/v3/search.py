@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the search tab in https://developers.themoviedb.org/3/search
@@ -12,7 +12,7 @@ def companies(**kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs)
 
 def collections(**kwargs):
     '''
@@ -22,7 +22,7 @@ def collections(**kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs)
 
 def keywords(**kwargs):
     '''
@@ -32,7 +32,7 @@ def keywords(**kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs)
 
 def movies(**kwargs):
     '''
@@ -42,7 +42,7 @@ def movies(**kwargs):
     optional: page, language, include_adult, region, year, primary_release_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs)
 
 def multi(**kwargs):
     '''
@@ -53,7 +53,7 @@ def multi(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs)
 
 def people(**kwargs):
     '''
@@ -63,7 +63,7 @@ def people(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs)
 
 def tv(**kwargs):
     '''
@@ -73,4 +73,4 @@ def tv(**kwargs):
     optional: page, language, first_air_date_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/tv', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/search/tv', params=kwargs)

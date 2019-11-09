@@ -1,4 +1,4 @@
-from ..base import _call, _headers
+from ..base import _call
 
 '''
 All api requests under the changes tab in https://developers.themoviedb.org/3/changes
@@ -14,7 +14,7 @@ def movie(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/changes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/movie/changes', params=kwargs)
 
 def tv(**kwargs):
     '''
@@ -26,7 +26,7 @@ def tv(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/changes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/changes', params=kwargs)
 
 def person(**kwargs):
     '''
@@ -38,4 +38,4 @@ def person(**kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/person/changes', params=kwargs, headers=_headers)
+    return _call('GET', f'https://api.themoviedb.org/3/person/changes', params=kwargs)
