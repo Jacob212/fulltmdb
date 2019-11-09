@@ -51,7 +51,7 @@ def _call(request_type, url, bearer=None, params=None, payload=None, disable_cac
         sleep_time = int(environ.get('reset')) - current_time
         print('Rate limit reached. Sleeping for: %d' % sleep_time)
         sleep(abs(sleep_time))
-        _call(request_type, url, headers, payload)
+        _call(request_type, url, bearer, params, payload)
 
     json = req.json()
 
