@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the movies tab in https://developers.themoviedb.org/3/movies
 '''
 
+
 def details(movie_id, **kwargs):
     '''
     Get the primary information about a movie.
@@ -15,6 +16,7 @@ def details(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}', params=kwargs)
 
+
 def account_states(movie_id, **kwargs):
     '''
     Grab the following account states for a session:
@@ -23,10 +25,11 @@ def account_states(movie_id, **kwargs):
         If it belongs to your favourite list
 
     required: movie_id, session_id or guest_session_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/account_states', params=kwargs)
+
 
 def alternative_titles(movie_id, **kwargs):
     '''
@@ -37,6 +40,7 @@ def alternative_titles(movie_id, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/alternative_titles', params=kwargs)
+
 
 def changes(movie_id, **kwargs):
     '''
@@ -49,6 +53,7 @@ def changes(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/changes', params=kwargs)
 
+
 def credits(movie_id):
     '''
     Get the cast and crew for a movie.
@@ -58,6 +63,7 @@ def credits(movie_id):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/credits')
+
 
 def external_ids(movie_id):
     '''
@@ -76,6 +82,7 @@ def external_ids(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/external_ids')
 
+
 def images(movie_id, **kwargs):
     '''
     Get the images that belong to a movie.
@@ -89,6 +96,7 @@ def images(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/images', params=kwargs)
 
+
 def keywords(movie_id):
     '''
     Get the keywords that have been added to a movie.
@@ -98,6 +106,7 @@ def keywords(movie_id):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/keywords')
+
 
 def release_dates(movie_id):
     '''
@@ -116,6 +125,7 @@ def release_dates(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/release_dates')
 
+
 def videos(movie_id, **kwargs):
     '''
     Get the videos that have been added to a movie.
@@ -125,6 +135,7 @@ def videos(movie_id, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/videos', params=kwargs)
+
 
 def translations(movie_id):
     '''
@@ -136,6 +147,7 @@ def translations(movie_id):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/translations')
 
+
 def recommendations(movie_id, **kwargs):
     '''
     Get a list of recommended movies for a movie.
@@ -145,6 +157,7 @@ def recommendations(movie_id, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/recommendations', params=kwargs)
+
 
 def similar(movie_id, **kwargs):
     '''
@@ -157,6 +170,7 @@ def similar(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/similar', params=kwargs)
 
+
 def reviews(movie_id, **kwargs):
     '''
     Get the user reviews for a movie.
@@ -166,6 +180,7 @@ def reviews(movie_id, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/reviews', params=kwargs)
+
 
 def lists(movie_id, **kwargs):
     '''
@@ -177,6 +192,7 @@ def lists(movie_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/lists', params=kwargs)
 
+
 def latest(**kwargs):
     '''
     Get the most newly created movie. This is a live response and will continuously change.
@@ -186,6 +202,7 @@ def latest(**kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/latest', params=kwargs)
+
 
 def now_playing(**kwargs):
     '''
@@ -198,6 +215,7 @@ def now_playing(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/now_playing', params=kwargs)
 
+
 def popular(**kwargs):
     '''
     Get a list of the current popular movies on TMDb. This list updates daily.
@@ -207,6 +225,7 @@ def popular(**kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/popular', params=kwargs)
+
 
 def top_rated(**kwargs):
     '''
@@ -218,6 +237,7 @@ def top_rated(**kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/top_rated', params=kwargs)
 
+
 def upcoming(**kwargs):
     '''
     Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
@@ -228,6 +248,7 @@ def upcoming(**kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/upcoming', params=kwargs)
+
 
 def rate_movie(movie_id, rating, **kwargs):
     '''
@@ -243,6 +264,7 @@ def rate_movie(movie_id, rating, **kwargs):
         }
 
     return _call('POST', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs, payload=payload)
+
 
 def delete_rating(movie_id, **kwargs):
     '''
