@@ -123,7 +123,7 @@ def check_item_status(access_token, list_id, **kwargs):
     You must be the owner of the list and therefore have a valid user access token in order to check an item status.
 
     required: list_id, media_id, media_type
-    optional: 
+    optional:
     '''
 
     return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/item_status', params=kwargs, bearer=access_token)

@@ -63,7 +63,7 @@ class MoviesTest(unittest.TestCase):
         result = movies.lists(550)
         self.assertTrue('results' in result)
 
-    # def test_rate_movie(self): 
+    # def test_rate_movie(self):
     #     result = movies.rate_movie(550) needs session_id
     #     self.assertTrue('results' in result)
 
@@ -90,4 +90,3 @@ class MoviesTest(unittest.TestCase):
     def test_upcoming(self):
         result = movies.upcoming()
         self.assertTrue('results' in result)
-

@@ -71,7 +71,7 @@ class TvTest(unittest.TestCase):
     #     result = tv.lists(1399)
     #     self.assertTrue('results' in result)
 
-    # def test_rate_movie(self): 
+    # def test_rate_movie(self):
     #     result = tv.rate_movie(1399) needs session_id
     #     self.assertTrue('results' in result)
 
@@ -98,4 +98,3 @@ class TvTest(unittest.TestCase):
     def test_top_rated(self):
         result = tv.top_rated()
         self.assertTrue('results' in result)
-

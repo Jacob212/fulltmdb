@@ -4,7 +4,7 @@ from ..base import _call
 All api requests under the discover tab in https://developers.themoviedb.org/3/discover
 '''
 
-def movie(**kwargs):
+def movie(params=None, **kwargs):
     '''
     Discover movies by different types of data like average rating, number of votes, genres and certifications.
     You can get a valid list of certifications from the https://developers.themoviedb.org/3/certifications/get-movie-certifications method.
@@ -31,9 +31,11 @@ def movie(**kwargs):
             with_people, with_companies, with_genres, without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=kwargs)
+    if params is None:
+        params = kwargs
+    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=params)
 
-def tv(**kwargs):
+def tv(params=None, **kwargs):
     '''
     Discover TV shows by different types of data like average rating, number of votes, genres, the network they aired on and air dates.
 
@@ -48,5 +50,6 @@ def tv(**kwargs):
             page, timezone, vote_count.gte, vote_count.lte, vote_average.gte, vote_average.lte, with_networks, with_companies, with_genres,
             without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language, screened_theatrically, include_null_first_air_dates
     '''
-
-    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=kwargs)
+    if params is None:
+        params = kwargs
+    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=params)

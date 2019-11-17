@@ -6,9 +6,10 @@ from fulltmdb import discover
 
 class DiscoverTest(unittest.TestCase):
     def test_get_details(self):
-        result = discover.movie()
+        result = discover.movie(page=1)
         self.assertTrue('results' in result)
 
     def test_get_tv_change_list(self):
-        result = discover.tv()
+        params = {'page':1}
+        result = discover.tv(params=params)
         self.assertTrue('results' in result)
