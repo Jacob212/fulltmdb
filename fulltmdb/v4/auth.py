@@ -33,11 +33,9 @@ def create_access_token(request_token):
     optional:
     '''
 
-    payload = {
-        'request_token': request_token
-    }
+    payload = "{\"request_token\": \""+request_token+"\"}"
 
-    return _call('GET', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
 
 def delete_access_token(access_token):
     '''

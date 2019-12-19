@@ -39,6 +39,7 @@ def _call(request_type, url, bearer=None, params=None, payload=None, disable_cac
             req = request(request_type, url, params=params, data=payload, headers=headers)
     else:
         req = request(request_type, url, params=params, data=payload, headers=headers)
+
     headers = req.headers
     if 'X-RateLimit-Remaining' in headers:
         environ['remaining'] = headers['X-RateLimit-Remaining']
@@ -51,7 +52,7 @@ def _call(request_type, url, bearer=None, params=None, payload=None, disable_cac
         sleep_time = int(environ.get('reset')) - current_time
         print('Rate limit reached. Sleeping for: %d' % sleep_time)
         sleep(abs(sleep_time))
-        _call(request_type, url, bearer, params, payload)
+        _call(request_type, url, bearer, params, payload, disable_cache)
 
     json = req.json()
 
