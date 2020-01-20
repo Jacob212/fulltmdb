@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the discover tab in https://developers.themoviedb.org/3/discover
 '''
 
+
 def movie(params=None, **kwargs):
     '''
     Discover movies by different types of data like average rating, number of votes, genres and certifications.
@@ -24,8 +25,8 @@ def movie(params=None, **kwargs):
 
     Some examples of what can be done with discover can be found https://www.themoviedb.org/documentation/api/discover.
 
-    required: 
-    optional: language, region, sort_by, certification_country, certification, certification.lte, certification.gte, include_adult, include_video, page, 
+    required:
+    optional: language, region, sort_by, certification_country, certification, certification.lte, certification.gte, include_adult, include_video, page,
             primary_release_year, primary_release_date.gte, primary_release_date.lte, release_date.gte, release_date.lte,
             with_release_type, year, vote_count.gte, vote_count.lte, vote_average.gte, vote_average.lte, with_cast, with_crew,
             with_people, with_companies, with_genres, without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language
@@ -34,6 +35,7 @@ def movie(params=None, **kwargs):
     if params is None:
         params = kwargs
     return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=params)
+
 
 def tv(params=None, **kwargs):
     '''
@@ -45,7 +47,7 @@ def tv(params=None, **kwargs):
 
     Some examples of what can be done with discover can be found https://www.themoviedb.org/documentation/api/discover.
 
-    required: 
+    required:
     optional: language, sort_by, air_date.gte, air_date.lte, first_air_date.gte, first_air_date.lte, first_air_date_year,
             page, timezone, vote_count.gte, vote_count.lte, vote_average.gte, vote_average.lte, with_networks, with_companies, with_genres,
             without_genres, with_keywords, without_keywords, with_runtime.gte, with_runtime.lte, with_original_language, screened_theatrically, include_null_first_air_dates
