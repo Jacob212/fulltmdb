@@ -17,9 +17,7 @@ def create_request_token(redirect_to=''):
     optional: redirect_to
     '''
 
-    payload = {
-        'redirect_to': redirect_to
-    }
+    payload = "{\"redirect_to\": \""+redirect_to+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/4/auth/request_token', payload=payload)
 
@@ -45,8 +43,6 @@ def delete_access_token(access_token):
     optional:
     '''
 
-    payload = {
-        'access_token': access_token
-    }
+    payload = "{\"access_token\": \""+access_token+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
