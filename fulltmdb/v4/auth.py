@@ -45,4 +45,4 @@ def delete_access_token(access_token):
 
     payload = "{\"access_token\": \""+access_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/4/auth/access_token', payload=payload)
