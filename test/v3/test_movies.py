@@ -2,7 +2,7 @@ import unittest
 from os import environ
 from fulltmdb import movies
 
-session_id = environ['SESSION_ID']
+session_id = environ.get('SESSION_ID')
 
 class MoviesTest(unittest.TestCase):
     def test_details(self):

@@ -2,7 +2,7 @@ import unittest
 from os import environ
 from fulltmdb import tv
 
-session_id = environ['SESSION_ID']
+session_id = environ.get('SESSION_ID')
 
 class TvTest(unittest.TestCase):
     def test_details(self):
