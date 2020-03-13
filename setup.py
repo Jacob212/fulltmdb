@@ -8,7 +8,7 @@ def read(fname):
 
 setup(
     name='fulltmdb',
-    version='0.1.3',
+    version='0.1.4',
     author='Jacob Hale',
     author_email='jacobhale.hale@gmail.com',
     description=('A wrapper for The Movie Database API v3 and v4.'),
