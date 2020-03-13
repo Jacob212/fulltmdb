@@ -67,7 +67,7 @@ class MoviesTest(unittest.TestCase):
 
     def test_rate_movie(self):
         result = movies.rate_movie(550, 9, session_id=session_id)
-        self.assertTrue(result['status_code'] == 1)
+        self.assertTrue(result['status_code'] == 12 or result['status_code'] == 1)
 
     def test_1delete_rating(self):
         result = movies.delete_rating(550, session_id=session_id)
