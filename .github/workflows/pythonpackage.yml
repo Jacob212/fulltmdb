@@ -3,7 +3,6 @@ env:
   TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }} 
   SESSION_ID: ${{ secrets.SESSION_ID }}
   ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 on: [push]
 
 jobs:
@@ -18,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1 
+      uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -35,6 +34,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pip install codecov
         pytest
-        codecov
