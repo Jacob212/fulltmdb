@@ -35,7 +35,7 @@ class EpisodesTest(unittest.TestCase):
 
     def test_rate_episode(self):
         result = episodes.rate_episode(1399, 1, 1, 9, session_id=session_id)
-        self.assertTrue(result['status_code'] == 1)
+        self.assertTrue(result['status_code'] == 12 or result['status_code'] == 1)
 
     def test_1delete_rating(self):
         result = episodes.delete_rating(1399, 1, 1, session_id=session_id)
