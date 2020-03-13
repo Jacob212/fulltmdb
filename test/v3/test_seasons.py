@@ -1,4 +1,5 @@
 import unittest
+from os import environ
 from fulltmdb import seasons
 
 session_id = environ['SESSION_ID']

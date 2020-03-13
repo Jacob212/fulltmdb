@@ -1,4 +1,5 @@
 import unittest
+from os import environ
 from fulltmdb import movies
 
 session_id = environ['SESSION_ID']
