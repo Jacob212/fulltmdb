@@ -88,7 +88,7 @@ def translations(tv_id, season_number, episode_number):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations')
 
-def rate_episode(tv_id, season_number, episode_number, payload, **kwargs):
+def rate_episode(tv_id, season_number, episode_number, rating, **kwargs):
     '''
     Rate a TV episode.
 
@@ -97,6 +97,8 @@ def rate_episode(tv_id, season_number, episode_number, payload, **kwargs):
     required: tv_id, season_number, episode_number, session_id or guest_session_id
     optional:
     '''
+
+    payload = "{\"value\":\""+str(rating)+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, payload=payload)
 
@@ -110,7 +112,7 @@ def delete_rating(tv_id, season_number, episode_number, **kwargs):
     optional:
     '''
 
-    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs)
+    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs)
 
 def videos(tv_id, season_number, episode_number, **kwargs):
     '''

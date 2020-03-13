@@ -1,6 +1,7 @@
 import unittest
 from fulltmdb import seasons
 
+session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
 
 class SeasonsTest(unittest.TestCase):
     def test_details(self):
@@ -11,9 +12,9 @@ class SeasonsTest(unittest.TestCase):
         result = seasons.changes('5256c89f19c2956ff6046d47')
         self.assertTrue('changes' in result)
 
-    # def test_account_states(self): needs session id
-    #     result = seasons.account_states()
-    #     self.assertTrue('results' in result)
+    def test_account_states(self):
+        result = seasons.account_states(3624, 1, session_id=session_id)
+        self.assertTrue('results' in result)
 
     def test_credits(self):
         result = seasons.credits(3624, 1)

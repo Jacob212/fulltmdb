@@ -33,7 +33,7 @@ def create_request_token():
 
     return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new')
 
-def create_request_token(request_token):
+def create_session(request_token):
     '''
     You can use this method to create a fully valid session ID once a user has validated the request token.
     More information about how this works can be found https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id.
@@ -42,13 +42,11 @@ def create_request_token(request_token):
     optional:
     '''
 
-    payload = {
-        'request_token': request_token
-    }
+    payload = "{\"request_token\": \""+request_token+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', payload=payload)
 
-def create_request_token(username, password, request_token):
+def create_session_login(username, password, request_token):
     '''
     This method allows an application to validate a request token by entering a username and password.
 
@@ -63,15 +61,11 @@ def create_request_token(username, password, request_token):
     optional:
     '''
 
-    payload = {
-        'username': username,
-        'password': password,
-        'request_token': request_token
-    }
+    payload = "{\"username\": \""+username+"\",\"password\": \""+password+"\",\"request_token\": \""+request_token+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', payload=payload)
 
-def create_request_token(access_token):
+def create_session_v4(access_token):
     '''
     Use this method to create a v3 session ID if you already have a valid v4 access token.
     The v4 token needs to be authenticated by the user.
@@ -80,14 +74,11 @@ def create_request_token(access_token):
     required: access_token
     optional:
     '''
-
-    payload = {
-        'access_token': access_token
-    }
+    payload = "{\"access_token\": \""+access_token+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', payload=payload)
 
-def create_request_token(session_id):
+def delete_session(session_id):
     '''
     If you would like to delete (or "logout") from a session, call this method with a valid session ID.
 
@@ -95,8 +86,6 @@ def create_request_token(session_id):
     optional:
     '''
 
-    payload = {
-        'session_id': session_id
-    }
+    payload = "{\"session_id\": \""+session_id+"\"}"
 
     return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', payload=payload)

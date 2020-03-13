@@ -1,15 +1,17 @@
 import unittest
 from fulltmdb import movies
 
+session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
+account_id = 8399416
 
 class MoviesTest(unittest.TestCase):
     def test_details(self):
         result = movies.details(550)
         self.assertTrue(result['original_title'] == "Fight Club")
 
-    # def test_account_states(self): session_id needed
-    #     result = movies.account_states()
-    #     self.assertTrue('changes' in result)
+    def test_account_states(self):
+        result = movies.account_states(550, session_id=session_id)
+        self.assertTrue('rated' in result)
 
     def test_alternative_titles(self):
         result = movies.alternative_titles(550)
@@ -63,13 +65,13 @@ class MoviesTest(unittest.TestCase):
         result = movies.lists(550)
         self.assertTrue('results' in result)
 
-    # def test_rate_movie(self):
-    #     result = movies.rate_movie(550) needs session_id
-    #     self.assertTrue('results' in result)
+    def test_rate_movie(self):
+        result = movies.rate_movie(550, 9, session_id=session_id)
+        self.assertTrue(result['status_code'] == 1)
 
-    # def test_delete_rating(self):
-    #     result = movies.delete_rating(550) needs session_id
-    #     self.assertTrue('results' in result)
+    def test_1delete_rating(self):
+        result = movies.delete_rating(550, session_id=session_id)
+        self.assertTrue(result['status_code'] == 13)
 
     def test_latest(self):
         result = movies.latest()

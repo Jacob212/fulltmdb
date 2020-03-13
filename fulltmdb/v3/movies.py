@@ -259,9 +259,7 @@ def rate_movie(movie_id, rating, **kwargs):
     optional: 
     '''
 
-    payload = {
-        'value': rating
-        }
+    payload = "{\"value\": \""+str(rating)+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', params=kwargs, payload=payload)
 

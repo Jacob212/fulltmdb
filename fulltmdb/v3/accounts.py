@@ -10,20 +10,6 @@ def details(session_id):
 
     required: session_id 
     optional:
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}')
@@ -34,22 +20,6 @@ def created_lists(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
-        
-        
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', params=kwargs)
@@ -60,32 +30,6 @@ def favorite_movies(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "page": integer,
-        "results": [
-            {
-                "adult": boolean,
-                "backdrop_path": string or null,
-                "genre_ids": [
-                    integer
-                ],
-                "id": integer,
-                "original_language": string,
-                "original_title": string,
-                "overview": string,
-                "release_date": string,
-                "poster_path": string or null,
-                "popularity": float,
-                "title": string,
-                "video": boolean,
-                "vote_average": integer,
-                "vote_count": integer
-                }
-            ],
-        "total_pages": integer,
-        "total_results": integer
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', params=kwargs)
@@ -96,51 +40,19 @@ def favorite_tv_shows(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', params=kwargs)
 
-def mark_as_favorite(account_id, session_id, media_type, media_id):
+def mark_as_favorite(account_id, session_id, media_type, media_id, favorite):
     '''
     This method allows you to mark a movie or TV show as a favorite item.
 
     required: session_id, account_id, media_type, media_id
     optional:
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
-    payload = {
-        'media_type': media_type,
-        'media_id': media_id,
-        'favorite': True
-        }
+    payload = "{\"media_type\": \""+media_type+"\", \"media_id\": \""+str(media_id)+"\", \"favorite\": \""+str(favorite)+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', payload=payload)
 
@@ -150,20 +62,6 @@ def rated_movies(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', params=kwargs)
@@ -174,20 +72,6 @@ def rated_tv(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', params=kwargs)
@@ -198,20 +82,6 @@ def rated_tv_episodes(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', params=kwargs)
@@ -222,20 +92,6 @@ def movie_watchlist(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', params=kwargs)
@@ -246,50 +102,18 @@ def tv_show_watchlist(account_id, **kwargs):
 
     required: session_id, account_id
     optional: page, language, sort_by
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', params=kwargs)
 
-def add_to_watchlist(account_id, session_id, media_type, media_id):
+def add_to_watchlist(account_id, session_id, media_type, media_id, watchlist):
     '''
     Add a movie or TV show to your watchlist.
 
     required: session_id, account_id, media_type, media_id
     optional:
-    
-    returns {
-        "avatar": {
-            "gravatar": {
-                "hash": string
-                }
-            },
-        "id": integer,
-        "iso_639_1": string,
-        "iso_3166_1": string,
-        "name": string,
-        "include_adult": boolean,
-        "username": string
-        }
     '''
 
-    payload = {
-        'media_type': media_type,
-        'media_id': media_id,
-        'watchlist': True
-        }
+    payload = "{\"media_type\": \""+media_type+"\", \"media_id\": \""+str(media_id)+"\", \"watchlist\": \""+str(watchlist)+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/watchlist?session_id={session_id}', payload=payload)

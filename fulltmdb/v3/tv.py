@@ -191,21 +191,6 @@ def videos(tv_id, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/videos', params=kwargs)
 
-# def lists(tv_id, **kwargs): should this be here?
-#     '''
-#     Get a list of lists that this movie belongs to.
-
-#     required: tv_id
-#     optional: page, language
-#     '''
-
-#     headers = {
-#         'authorization': f'Bearer {_get_read_access_token()}',
-#         'content-type': 'application/json;charset=utf-8'
-#         }
-
-#     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/lists', params=kwargs)
-
 def latest(**kwargs):
     '''
     Get the most newly created TV show. This is a live response and will continuously change.
@@ -267,9 +252,7 @@ def rate_movie(tv_id, rating, **kwargs):
     optional: 
     '''
 
-    payload = {
-        'value': rating
-        }
+    payload = "{\"value\": \""+str(rating)+"\"}"
 
     return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/rating', params=kwargs, payload=payload)
 

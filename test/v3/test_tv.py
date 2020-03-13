@@ -1,15 +1,16 @@
 import unittest
 from fulltmdb import tv
 
+session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
 
 class TvTest(unittest.TestCase):
     def test_details(self):
         result = tv.details(1399)
         self.assertTrue(result['name'] == 'Game of Thrones')
 
-    # def test_account_states(self): session_id needed
-    #     result = tv.account_states()
-    #     self.assertTrue('changes' in result)
+    def test_account_states(self):
+        result = tv.account_states(1399, session_id=session_id)
+        self.assertTrue('rated' in result)
 
     def test_alternative_titles(self):
         result = tv.alternative_titles(1399)
@@ -67,17 +68,13 @@ class TvTest(unittest.TestCase):
         result = tv.videos(1399)
         self.assertTrue('results' in result)
 
-    # def test_lists(self):
-    #     result = tv.lists(1399)
-    #     self.assertTrue('results' in result)
+    def test_rate_movie(self):
+        result = tv.rate_movie(1399, 9, session_id=session_id)
+        self.assertTrue(result['status_code'] == 12 or result['status_code'] == 1)
 
-    # def test_rate_movie(self):
-    #     result = tv.rate_movie(1399) needs session_id
-    #     self.assertTrue('results' in result)
-
-    # def test_delete_rating(self):
-    #     result = tv.delete_rating(1399) needs session_id
-    #     self.assertTrue('results' in result)
+    def test_1delete_rating(self):
+        result = tv.delete_rating(1399, session_id=session_id)
+        self.assertTrue(result['status_code'] == 13)
 
     def test_latest(self):
         result = tv.latest()
