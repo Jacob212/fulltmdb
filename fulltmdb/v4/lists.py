@@ -126,4 +126,4 @@ def check_item_status(access_token, list_id, **kwargs):
     optional:
     '''
 
-    return _call('DELETE', f'https://api.themoviedb.org/4/list/{list_id}/item_status', params=kwargs, bearer=access_token)
+    return _call('GET', f'https://api.themoviedb.org/4/list/{list_id}/item_status', params=kwargs, bearer=access_token)
