@@ -1,8 +1,9 @@
 import unittest
 from fulltmdb import accounts
+from os import environ
 
-session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
-account_id = 8399416
+session_id = environ['SESSION_ID']
+account_id = environ['ACCOUNT_ID']
 
 class AccountsTest(unittest.TestCase):
     def test_details(self):

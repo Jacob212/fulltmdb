@@ -1,8 +1,7 @@
 import unittest
 from fulltmdb import episodes
 
-session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
-account_id = 8399416
+session_id = environ['SESSION_ID']
 
 class EpisodesTest(unittest.TestCase):
     def test_details(self):

@@ -1,7 +1,7 @@
 import unittest
 from fulltmdb import seasons
 
-session_id = "15d84fae5caeee1086841399cc6deff8b2495f89"
+session_id = environ['SESSION_ID']
 
 class SeasonsTest(unittest.TestCase):
     def test_details(self):
