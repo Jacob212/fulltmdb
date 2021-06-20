@@ -5,7 +5,7 @@ All api requests under the networks tab in https://developers.themoviedb.org/3/n
 '''
 
 
-def details(network_id):
+def details(network_id, disable_cache=False):
     '''
     Get the details of a network.
 
@@ -13,10 +13,10 @@ def details(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}')
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}', disable_cache)
 
 
-def alternative_names(network_id):
+def alternative_names(network_id, disable_cache=False):
     '''
     Get the alternative names of a network.
 
@@ -24,10 +24,10 @@ def alternative_names(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names')
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/alternative_names', disable_cache)
 
 
-def images(network_id):
+def images(network_id, disable_cache=False):
     '''
     Get the TV network logos by id.
 
@@ -44,4 +44,4 @@ def images(network_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images')
+    return _call('GET', f'https://api.themoviedb.org/3/network/{network_id}/images', disable_cache)

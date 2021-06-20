@@ -4,7 +4,7 @@ from ..base import _call
 All api requests under the tv episodes tab in https://developers.themoviedb.org/3/tv-episodes
 '''
 
-def details(tv_id, season_number, episode_number, **kwargs):
+def details(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the TV episode details by id.
     Supports append_to_response. https://developers.themoviedb.org/3/getting-started/append-to-response
@@ -13,9 +13,9 @@ def details(tv_id, season_number, episode_number, **kwargs):
     optional: language, append_to_response
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', disable_cache, params=kwargs)
 
-def changes(episode_id, **kwargs):
+def changes(episode_id, disable_cache=False, **kwargs):
     '''
     Get the changes for a TV episode. By default only the last 24 hours are returned.
     You can query up to 14 days in a single query by using the start_date and end_date query parameters.
@@ -24,9 +24,9 @@ def changes(episode_id, **kwargs):
     optional: page, start_date, end_date
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', disable_cache, params=kwargs)
 
-def account_states(tv_id, season_number, episode_number, **kwargs):
+def account_states(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get your rating for a episode.
 
@@ -34,9 +34,9 @@ def account_states(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', disable_cache, params=kwargs)
 
-def credits(tv_id, season_number, episode_number, **kwargs):
+def credits(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the credits (cast, crew and guest stars) for a TV episode.
 
@@ -44,9 +44,9 @@ def credits(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', disable_cache, params=kwargs)
 
-def external_ids(tv_id, season_number, episode_number, **kwargs):
+def external_ids(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the external ids for a TV episode. We currently support the following external sources.
 
@@ -63,9 +63,9 @@ def external_ids(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', disable_cache, params=kwargs)
 
-def images(tv_id, season_number, episode_number):
+def images(tv_id, season_number, episode_number, disable_cache=False):
     '''
     Get the images that belong to a TV episode.
     Querying images with a language parameter will filter the results.
@@ -76,9 +76,9 @@ def images(tv_id, season_number, episode_number):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images')
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images', disable_cache)
 
-def translations(tv_id, season_number, episode_number):
+def translations(tv_id, season_number, episode_number, disable_cache=False):
     '''
     Get the videos that have been added to a TV episode.
 
@@ -86,7 +86,7 @@ def translations(tv_id, season_number, episode_number):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations')
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations', disable_cache)
 
 def rate_episode(tv_id, season_number, episode_number, rating, **kwargs):
     '''
@@ -100,7 +100,7 @@ def rate_episode(tv_id, season_number, episode_number, rating, **kwargs):
 
     payload = "{\"value\":\""+str(rating)+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs, payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', True, params=kwargs, payload=payload)
 
 def delete_rating(tv_id, season_number, episode_number, **kwargs):
     '''
@@ -112,9 +112,9 @@ def delete_rating(tv_id, season_number, episode_number, **kwargs):
     optional:
     '''
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', params=kwargs)
+    return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', True, params=kwargs)
 
-def videos(tv_id, season_number, episode_number, **kwargs):
+def videos(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the videos that have been added to a TV episode.
 
@@ -122,4 +122,4 @@ def videos(tv_id, season_number, episode_number, **kwargs):
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos', disable_cache, params=kwargs)

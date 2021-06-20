@@ -4,7 +4,7 @@ from ..base import _call
 All api requests under the companies tab in https://developers.themoviedb.org/3/companies
 '''
 
-def details(company_id):
+def details(company_id, disable_cache=False):
     '''
     Get a companies details by id.
 
@@ -12,9 +12,9 @@ def details(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}')
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', disable_cache)
 
-def alternative_names(company_id):
+def alternative_names(company_id, disable_cache=False):
     '''
     Get the alternative names of a company.
 
@@ -22,9 +22,9 @@ def alternative_names(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names')
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', disable_cache)
 
-def images(company_id):
+def images(company_id, disable_cache=False):
     '''
     Get a companies logos by id.
 
@@ -39,4 +39,4 @@ def images(company_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images')
+    return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/images', disable_cache)

@@ -21,7 +21,7 @@ def create_guest_session():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new')
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new', True)
 
 def create_request_token():
     '''
@@ -31,7 +31,7 @@ def create_request_token():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new')
+    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new', True)
 
 def create_session(request_token):
     '''
@@ -44,7 +44,7 @@ def create_session(request_token):
 
     payload = "{\"request_token\": \""+request_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', True, payload=payload)
 
 def create_session_login(username, password, request_token):
     '''
@@ -63,7 +63,7 @@ def create_session_login(username, password, request_token):
 
     payload = "{\"username\": \""+username+"\",\"password\": \""+password+"\",\"request_token\": \""+request_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', True, payload=payload)
 
 def create_session_v4(access_token):
     '''
@@ -76,7 +76,7 @@ def create_session_v4(access_token):
     '''
     payload = "{\"access_token\": \""+access_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', payload=payload)
+    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', True, payload=payload)
 
 def delete_session(session_id):
     '''
@@ -88,4 +88,4 @@ def delete_session(session_id):
 
     payload = "{\"session_id\": \""+session_id+"\"}"
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', payload=payload)
+    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', True, payload=payload)

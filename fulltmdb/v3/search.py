@@ -4,7 +4,7 @@ from ..base import _call
 All api requests under the search tab in https://developers.themoviedb.org/3/search
 '''
 
-def companies(**kwargs):
+def companies(disable_cache=False, **kwargs):
     '''
     Search for companies.
 
@@ -12,9 +12,9 @@ def companies(**kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/company', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/company', disable_cache, params=kwargs)
 
-def collections(**kwargs):
+def collections(disable_cache=False, **kwargs):
     '''
     Search for collections.
 
@@ -22,9 +22,9 @@ def collections(**kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/collection', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/collection', disable_cache, params=kwargs)
 
-def keywords(**kwargs):
+def keywords(disable_cache=False, **kwargs):
     '''
     Search for keywords.
 
@@ -32,9 +32,9 @@ def keywords(**kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', disable_cache, params=kwargs)
 
-def movies(**kwargs):
+def movies(disable_cache=False, **kwargs):
     '''
     Search for movies.
 
@@ -42,9 +42,9 @@ def movies(**kwargs):
     optional: page, language, include_adult, region, year, primary_release_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/movie', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/movie', disable_cache, params=kwargs)
 
-def multi(**kwargs):
+def multi(disable_cache=False, **kwargs):
     '''
     Search multiple models in a single request.
     Multi search currently supports searching for movies, tv shows and people in a single request.
@@ -53,9 +53,9 @@ def multi(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/multi', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/multi', disable_cache, params=kwargs)
 
-def people(**kwargs):
+def people(disable_cache=False, **kwargs):
     '''
     Search for people.
 
@@ -63,9 +63,9 @@ def people(**kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/person', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/person', disable_cache, params=kwargs)
 
-def tv(**kwargs):
+def tv(disable_cache=False, **kwargs):
     '''
     Search for a TV show.
 
@@ -73,4 +73,4 @@ def tv(**kwargs):
     optional: page, language, first_air_date_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/tv', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/search/tv', disable_cache, params=kwargs)

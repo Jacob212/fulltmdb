@@ -5,7 +5,7 @@ All api requests under the discover tab in https://developers.themoviedb.org/3/d
 '''
 
 
-def movie(params=None, **kwargs):
+def movie(disable_cache=False, params=None, **kwargs):
     '''
     Discover movies by different types of data like average rating, number of votes, genres and certifications.
     You can get a valid list of certifications from the https://developers.themoviedb.org/3/certifications/get-movie-certifications method.
@@ -34,10 +34,10 @@ def movie(params=None, **kwargs):
 
     if params is None:
         params = kwargs
-    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', params=params)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', disable_cache, params=params)
 
 
-def tv(params=None, **kwargs):
+def tv(disable_cache=False, params=None, **kwargs):
     '''
     Discover TV shows by different types of data like average rating, number of votes, genres, the network they aired on and air dates.
 
@@ -54,4 +54,4 @@ def tv(params=None, **kwargs):
     '''
     if params is None:
         params = kwargs
-    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', params=params)
+    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', disable_cache, params=params)

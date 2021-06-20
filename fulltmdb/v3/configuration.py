@@ -4,7 +4,7 @@ from ..base import _call
 All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
 '''
 
-def api():
+def api(disable_cache=False):
     '''
     Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data.
     The purpose of this is to try and keep the actual API responses as light as possible.
@@ -21,9 +21,9 @@ def api():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration', disable_cache)
 
-def countries():
+def countries(disable_cache=False):
     '''
     Get the list of countries (ISO 3166-1 tags) used throughout TMDb.
 
@@ -31,9 +31,9 @@ def countries():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', disable_cache)
 
-def jobs():
+def jobs(disable_cache=False):
     '''
     Get a list of the jobs and departments we use on TMDb.
 
@@ -41,9 +41,9 @@ def jobs():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', disable_cache)
 
-def languages():
+def languages(disable_cache=False):
     '''
     Get the list of languages (ISO 639-1 tags) used throughout TMDb.
 
@@ -51,9 +51,9 @@ def languages():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', disable_cache)
 
-def primary_translations():
+def primary_translations(disable_cache=False):
     '''
     Get a list of the officially supported translations on TMDb.
 
@@ -71,9 +71,9 @@ def primary_translations():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', disable_cache)
 
-def timezones():
+def timezones(disable_cache=False):
     '''
     Get the list of timezones used throughout TMDb.
 
@@ -81,4 +81,4 @@ def timezones():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones')
+    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones', disable_cache)

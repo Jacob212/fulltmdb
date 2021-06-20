@@ -3,7 +3,9 @@ from os import environ
 from requests import request
 import requests_cache
 
-environ['remaining'] = '40'
+# environ['remaining'] = '40'
+# TMDB removed rate limiting a while ago.
+# this and some below are not needed anymore
 
 class Setup():
     def set_read_access_token(access_token):
@@ -15,6 +17,9 @@ class Setup():
     def purge_cache():
         requests_cache.remove_expired_responses()
 
+    def clear_cache():
+        requests_cache.clear()
+
 def _get_read_access_token():
     return environ.get('TMDB_READ_ACCESS_TOKEN')
 
@@ -23,7 +28,7 @@ def _check_status(result):
         raise Exception(result['status_message'])
     return result
 
-def _call(request_type, url, bearer=None, params=None, payload=None, disable_cache=None):
+def _call(request_type, url, disable_cache, bearer=None, params=None, payload=None):
     if bearer is None:
         headers = {
             'authorization': f'Bearer {_get_read_access_token()}',
@@ -40,19 +45,19 @@ def _call(request_type, url, bearer=None, params=None, payload=None, disable_cac
     else:
         req = request(request_type, url, params=params, data=payload, headers=headers)
 
-    headers = req.headers
-    if 'X-RateLimit-Remaining' in headers:
-        environ['remaining'] = headers['X-RateLimit-Remaining']
+    # headers = req.headers
+    # if 'X-RateLimit-Remaining' in headers:
+    #     environ['remaining'] = headers['X-RateLimit-Remaining']
 
-    if 'X-RateLimit-Reset' in headers:
-        environ['reset'] = headers['X-RateLimit-Reset']
+    # if 'X-RateLimit-Reset' in headers:
+    #     environ['reset'] = headers['X-RateLimit-Reset']
 
-    if int(environ.get('remaining')) < 1:
-        current_time = int(time())
-        sleep_time = int(environ.get('reset')) - current_time
-        print('Rate limit reached. Sleeping for: %d' % sleep_time)
-        sleep(abs(sleep_time))
-        _call(request_type, url, bearer, params, payload, disable_cache)
+    # if int(environ.get('remaining')) < 1:
+    #     current_time = int(time())
+    #     sleep_time = int(environ.get('reset')) - current_time
+    #     print('Rate limit reached. Sleeping for: %d' % sleep_time)
+    #     sleep(abs(sleep_time))
+    #     _call(request_type, url, bearer, params, payload, disable_cache)
 
     json = req.json()
 

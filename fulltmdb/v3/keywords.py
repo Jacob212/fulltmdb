@@ -5,7 +5,7 @@ All api requests under the keywords tab in https://developers.themoviedb.org/3/k
 '''
 
 
-def details(keyword_id):
+def details(keyword_id, disable_cache=False):
     '''
     Gets name and id of keyword
 
@@ -13,10 +13,10 @@ def details(keyword_id):
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}')
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}', disable_cache)
 
 
-def movies(keyword_id, **kwargs):
+def movies(keyword_id, disable_cache=False, **kwargs):
     '''
     Get the movies that belong to a keyword.
     We highly recommend using https://developers.themoviedb.org/3/discover/movie-discover instead of this method as it is much more flexible.
@@ -25,4 +25,4 @@ def movies(keyword_id, **kwargs):
     optional:   language, include_adult
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', params=kwargs)
+    return _call('GET', f'https://api.themoviedb.org/3/keyword/{keyword_id}/movies', disable_cache, params=kwargs)
