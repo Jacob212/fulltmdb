@@ -24,5 +24,5 @@ class CacheTest(unittest.TestCase):
         for i in range(50):
             changes.movie(disable_cache=True)
         total4 = time.time()-now
-        self.assertTrue(total2-1>total)
-        self.assertTrue(total4-1>total3)
+        self.assertTrue(total2>total)
+        self.assertTrue(total4>total3)
