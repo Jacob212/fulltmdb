@@ -17,6 +17,7 @@ from . import lists as Lists
 from . import movies as Movies
 from . import networks as Networks
 from . import people as People
+from . import providers as Providers
 from . import reviews as Reviews
 from . import search as Search
 from . import seasons as Seasons
