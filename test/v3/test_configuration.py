@@ -1,28 +1,28 @@
 import unittest
-from fulltmdb import configuration
+from fulltmdb import Configuration
 
 
 class ConfigurationTest(unittest.TestCase):
     def test_api(self):
-        result = configuration.api()
+        result = Configuration.api()
         self.assertTrue('images' in result)
 
     def test_countries(self):
-        result = configuration.countries()
+        result = Configuration.countries()
         self.assertTrue(type(result) == list)
 
     def test_jobs(self):
-        result = configuration.jobs()
+        result = Configuration.jobs()
         self.assertTrue(type(result) == list)
 
     def test_languages(self):
-        result = configuration.languages()
+        result = Configuration.languages()
         self.assertTrue(type(result) == list)
 
     def test_primary_translations(self):
-        result = configuration.primary_translations()
+        result = Configuration.primary_translations()
         self.assertTrue(type(result) == list)
 
     def test_timezones(self):
-        result = configuration.timezones()
+        result = Configuration.timezones()
         self.assertTrue(type(result) == list)

@@ -1,16 +1,16 @@
 import unittest
-from fulltmdb import collections
+from fulltmdb import Collections
 
 
 class CollectionsTest(unittest.TestCase):
     def test_details(self):
-        result = collections.details(10)
+        result = Collections.details(10)
         self.assertTrue('id' in result)
 
     def test_images(self):
-        result = collections.images(10)
+        result = Collections.images(10)
         self.assertTrue('id' in result)
 
     def test_translations(self):
-        result = collections.translations(10)
+        result = Collections.translations(10)
         self.assertTrue('id' in result)

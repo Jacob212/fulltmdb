@@ -1,16 +1,16 @@
 import unittest
-from fulltmdb import changes
+from fulltmdb import Changes
 
 
 class ChangesTest(unittest.TestCase):
     def test_movie(self):
-        result = changes.movie()
+        result = Changes.movie()
         self.assertTrue('results' in result)
 
     def test_tv(self):
-        result = changes.tv()
+        result = Changes.tv()
         self.assertTrue('results' in result)
 
     def test_person(self):
-        result = changes.person()
+        result = Changes.person()
         self.assertTrue('results' in result)

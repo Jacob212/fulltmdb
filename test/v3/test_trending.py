@@ -1,8 +1,8 @@
 import unittest
-from fulltmdb import trending
+from fulltmdb import Trending
 
 
 class TrendingTest(unittest.TestCase):
     def test_trending(self):
-        result = trending.trending('all', 'day')
+        result = Trending.trending('all', 'day')
         self.assertTrue('results' in result)
