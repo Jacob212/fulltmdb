@@ -11,5 +11,5 @@ class CacheTest(unittest.TestCase):
         result = changes.movie()
         self.assertTrue(result.from_cache is True)
         result = changes.movie(disable_cache=True)
-        self.assertFalse(hasattr(result, 'from_cache'))
         Setup.just_json(True)
+        self.assertFalse(hasattr(result, 'from_cache'))
