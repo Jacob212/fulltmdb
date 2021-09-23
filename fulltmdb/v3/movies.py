@@ -59,7 +59,7 @@ def credits(movie_id, disable_cache=False):
     Get the cast and crew for a movie.
 
     required: movie_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/credits', disable_cache)
@@ -69,15 +69,15 @@ def external_ids(movie_id, disable_cache=False):
     '''
     Get the external ids for a movie. We currently support the following external sources.
 
-    Media Databases: 
-        IMDb ID 
+    Media Databases:
+        IMDb ID
     Social IDs:
         Facebook
         Instagram
         Twitter
 
     required: movie_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/external_ids', disable_cache)
@@ -102,7 +102,7 @@ def keywords(movie_id, disable_cache=False):
     Get the keywords that have been added to a movie.
 
     required: movie_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/keywords', disable_cache)
@@ -120,7 +120,7 @@ def release_dates(movie_id, disable_cache=False):
         TV
 
     required: movie_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/release_dates', disable_cache)
@@ -142,7 +142,7 @@ def translations(movie_id, disable_cache=False):
     Get a list of translations that have been created for a movie.
 
     required: movie_id
-    optional: 
+    optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/movie/{movie_id}/translations', disable_cache)
@@ -197,11 +197,11 @@ def latest(disable_cache=False, **kwargs):
     '''
     Get the most newly created movie. This is a live response and will continuously change.
 
-    required: 
+    required:
     optional: language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/latest', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/movie/latest', disable_cache, params=kwargs)
 
 
 def now_playing(disable_cache=False, **kwargs):
@@ -209,33 +209,33 @@ def now_playing(disable_cache=False, **kwargs):
     Get a list of movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
     You can optionally specify a region prameter which will narrow the search to only look for theatrical release dates within the specified country.
 
-    required: 
+    required:
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/now_playing', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/movie/now_playing', disable_cache, params=kwargs)
 
 
 def popular(disable_cache=False, **kwargs):
     '''
     Get a list of the current popular movies on TMDb. This list updates daily.
 
-    required: 
+    required:
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/popular', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/movie/popular', disable_cache, params=kwargs)
 
 
 def top_rated(disable_cache=False, **kwargs):
     '''
     Get the top rated movies on TMDb.
 
-    required: 
+    required:
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/top_rated', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/movie/top_rated', disable_cache, params=kwargs)
 
 
 def upcoming(disable_cache=False, **kwargs):
@@ -243,11 +243,11 @@ def upcoming(disable_cache=False, **kwargs):
     Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
     You can optionally specify a region prameter which will narrow the search to only look for theatrical release dates within the specified country.
 
-    required: 
+    required:
     optional: page, language, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/movie/upcoming', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/movie/upcoming', disable_cache, params=kwargs)
 
 
 def rate_movie(movie_id, rating, **kwargs):
@@ -256,7 +256,7 @@ def rate_movie(movie_id, rating, **kwargs):
     A valid session or guest session ID is required. You can read more about how this works: https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
 
     required: movie_id, rating, session_id or guest_session_id
-    optional: 
+    optional:
     '''
 
     payload = "{\"value\": \""+str(rating)+"\"}"
@@ -270,7 +270,7 @@ def delete_rating(movie_id, **kwargs):
     A valid session or guest session ID is required. You can read more about how this works: https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
 
     required: movie_id, session_id or guest_session_id
-    optional: 
+    optional:
     '''
 
     return _call('DELETE', f'https://api.themoviedb.org/3/movie/{movie_id}/rating', True, params=kwargs)

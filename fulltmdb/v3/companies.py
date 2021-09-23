@@ -4,25 +4,28 @@ from ..base import _call
 All api requests under the companies tab in https://developers.themoviedb.org/3/companies
 '''
 
+
 def details(company_id, disable_cache=False):
     '''
     Get a companies details by id.
 
-    required: company_id 
+    required: company_id
     optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}', disable_cache)
 
+
 def alternative_names(company_id, disable_cache=False):
     '''
     Get the alternative names of a company.
 
-    required: company_id 
+    required: company_id
     optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/company/{company_id}/alternative_names', disable_cache)
+
 
 def images(company_id, disable_cache=False):
     '''
@@ -35,7 +38,7 @@ def images(company_id, disable_cache=False):
 
     For more information about how SVG's and PNG's can be used, take a read through https://developers.themoviedb.org/3/getting-started/images.
 
-    required: company_id 
+    required: company_id
     optional:
     '''
 

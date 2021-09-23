@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the search tab in https://developers.themoviedb.org/3/search
 '''
 
+
 def companies(disable_cache=False, **kwargs):
     '''
     Search for companies.
@@ -12,7 +13,8 @@ def companies(disable_cache=False, **kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/company', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/company', disable_cache, params=kwargs)
+
 
 def collections(disable_cache=False, **kwargs):
     '''
@@ -22,7 +24,8 @@ def collections(disable_cache=False, **kwargs):
     optional: page, language
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/collection', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/collection', disable_cache, params=kwargs)
+
 
 def keywords(disable_cache=False, **kwargs):
     '''
@@ -32,7 +35,8 @@ def keywords(disable_cache=False, **kwargs):
     optional: page
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/keyword', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/keyword', disable_cache, params=kwargs)
+
 
 def movies(disable_cache=False, **kwargs):
     '''
@@ -42,7 +46,8 @@ def movies(disable_cache=False, **kwargs):
     optional: page, language, include_adult, region, year, primary_release_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/movie', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/movie', disable_cache, params=kwargs)
+
 
 def multi(disable_cache=False, **kwargs):
     '''
@@ -53,7 +58,8 @@ def multi(disable_cache=False, **kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/multi', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/multi', disable_cache, params=kwargs)
+
 
 def people(disable_cache=False, **kwargs):
     '''
@@ -63,7 +69,8 @@ def people(disable_cache=False, **kwargs):
     optional: page, language, include_adult, region
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/person', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/person', disable_cache, params=kwargs)
+
 
 def tv(disable_cache=False, **kwargs):
     '''
@@ -73,4 +80,4 @@ def tv(disable_cache=False, **kwargs):
     optional: page, language, first_air_date_year
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/search/tv', disable_cache, params=kwargs)
+    return _call('GET', 'https://api.themoviedb.org/3/search/tv', disable_cache, params=kwargs)

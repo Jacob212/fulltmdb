@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the configuration tab in https://developers.themoviedb.org/3/configuration
 '''
 
+
 def api(disable_cache=False):
     '''
     Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data.
@@ -17,41 +18,45 @@ def api(disable_cache=False):
     https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg
     The configuration method also contains the list of change keys which can be useful if you are building an app that consumes data from the change feed.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration', disable_cache)
+
 
 def countries(disable_cache=False):
     '''
     Get the list of countries (ISO 3166-1 tags) used throughout TMDb.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/countries', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration/countries', disable_cache)
+
 
 def jobs(disable_cache=False):
     '''
     Get a list of the jobs and departments we use on TMDb.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/jobs', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration/jobs', disable_cache)
+
 
 def languages(disable_cache=False):
     '''
     Get the list of languages (ISO 639-1 tags) used throughout TMDb.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/languages', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration/languages', disable_cache)
+
 
 def primary_translations(disable_cache=False):
     '''
@@ -67,18 +72,19 @@ def primary_translations(disable_cache=False):
 
     One more thing to mention, these are the translations that map to our website translation project. You can view and contribute to that project https://app.localeapp.com/projects/8267.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/primary_translations', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration/primary_translations', disable_cache)
+
 
 def timezones(disable_cache=False):
     '''
     Get the list of timezones used throughout TMDb.
 
-    required: 
+    required:
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/configuration/timezones', disable_cache)
+    return _call('GET', 'https://api.themoviedb.org/3/configuration/timezones', disable_cache)

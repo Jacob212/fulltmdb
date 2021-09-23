@@ -4,15 +4,17 @@ from ..base import _call
 All api requests under the account tab in https://developers.themoviedb.org/3/account
 '''
 
+
 def details(session_id, disable_cache=False):
     '''
     Get your account details.
 
-    required: session_id 
+    required: session_id
     optional:
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account?session_id={session_id}', disable_cache)
+
 
 def created_lists(account_id, disable_cache=False, **kwargs):
     '''
@@ -24,6 +26,7 @@ def created_lists(account_id, disable_cache=False, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/lists', disable_cache, params=kwargs)
 
+
 def favorite_movies(account_id, disable_cache=False, **kwargs):
     '''
     Get the list of your favorite movies.
@@ -34,6 +37,7 @@ def favorite_movies(account_id, disable_cache=False, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/movies', disable_cache, params=kwargs)
 
+
 def favorite_tv_shows(account_id, disable_cache=False, **kwargs):
     '''
     Get the list of your favorite TV shows.
@@ -43,6 +47,7 @@ def favorite_tv_shows(account_id, disable_cache=False, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/favorite/tv', disable_cache, params=kwargs)
+
 
 def mark_as_favorite(account_id, session_id, media_type, media_id, favorite):
     '''
@@ -56,6 +61,7 @@ def mark_as_favorite(account_id, session_id, media_type, media_id, favorite):
 
     return _call('POST', f'https://api.themoviedb.org/3/account/{account_id}/favorite?session_id={session_id}', True, payload=payload)
 
+
 def rated_movies(account_id, disable_cache=False, **kwargs):
     '''
     Get a list of all the movies you have rated.
@@ -65,6 +71,7 @@ def rated_movies(account_id, disable_cache=False, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/movies', disable_cache, params=kwargs)
+
 
 def rated_tv(account_id, disable_cache=False, **kwargs):
     '''
@@ -76,6 +83,7 @@ def rated_tv(account_id, disable_cache=False, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv', disable_cache, params=kwargs)
 
+
 def rated_tv_episodes(account_id, disable_cache=False, **kwargs):
     '''
     Get a list of all the TV episodes you have rated.
@@ -85,6 +93,7 @@ def rated_tv_episodes(account_id, disable_cache=False, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/rated/tv/episodes', disable_cache, params=kwargs)
+
 
 def movie_watchlist(account_id, disable_cache=False, **kwargs):
     '''
@@ -96,6 +105,7 @@ def movie_watchlist(account_id, disable_cache=False, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/movies', disable_cache, params=kwargs)
 
+
 def tv_show_watchlist(account_id, disable_cache=False, **kwargs):
     '''
     Get a list of all the TV shows you have added to your watchlist.
@@ -105,6 +115,7 @@ def tv_show_watchlist(account_id, disable_cache=False, **kwargs):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/account/{account_id}/watchlist/tv', disable_cache, params=kwargs)
+
 
 def add_to_watchlist(account_id, session_id, media_type, media_id, watchlist):
     '''

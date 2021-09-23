@@ -34,7 +34,7 @@ def movie(disable_cache=False, params=None, **kwargs):
 
     if params is None:
         params = kwargs
-    return _call('GET', f'https://api.themoviedb.org/3/discover/movie', disable_cache, params=params)
+    return _call('GET', 'https://api.themoviedb.org/3/discover/movie', disable_cache, params=params)
 
 
 def tv(disable_cache=False, params=None, **kwargs):
@@ -54,4 +54,4 @@ def tv(disable_cache=False, params=None, **kwargs):
     '''
     if params is None:
         params = kwargs
-    return _call('GET', f'https://api.themoviedb.org/3/discover/tv', disable_cache, params=params)
+    return _call('GET', 'https://api.themoviedb.org/3/discover/tv', disable_cache, params=params)

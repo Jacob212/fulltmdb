@@ -6,6 +6,7 @@ All api requests under the authentication tab in https://developers.themoviedb.o
 https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id
 '''
 
+
 def create_guest_session():
     '''
     This method will let you create a new guest session.
@@ -21,7 +22,8 @@ def create_guest_session():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/guest_session/new', True)
+    return _call('GET', 'https://api.themoviedb.org/3/authentication/guest_session/new', True)
+
 
 def create_request_token():
     '''
@@ -31,7 +33,8 @@ def create_request_token():
     optional:
     '''
 
-    return _call('GET', f'https://api.themoviedb.org/3/authentication/token/new', True)
+    return _call('GET', 'https://api.themoviedb.org/3/authentication/token/new', True)
+
 
 def create_session(request_token):
     '''
@@ -44,7 +47,8 @@ def create_session(request_token):
 
     payload = "{\"request_token\": \""+request_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/new', True, payload=payload)
+    return _call('POST', 'https://api.themoviedb.org/3/authentication/session/new', True, payload=payload)
+
 
 def create_session_login(username, password, request_token):
     '''
@@ -55,15 +59,14 @@ def create_session_login(username, password, request_token):
     Please note, the preferred method of validating a request token is to have a user authenticate the request via the TMDb website.
     You can read about that method https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id.
 
-    If you decide to use this method please use HTTPS.
-
     required: username, password, request_token
     optional:
     '''
 
     payload = "{\"username\": \""+username+"\",\"password\": \""+password+"\",\"request_token\": \""+request_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/token/validate_with_login', True, payload=payload)
+    return _call('POST', 'https://api.themoviedb.org/3/authentication/token/validate_with_login', True, payload=payload)
+
 
 def create_session_v4(access_token):
     '''
@@ -76,7 +79,8 @@ def create_session_v4(access_token):
     '''
     payload = "{\"access_token\": \""+access_token+"\"}"
 
-    return _call('POST', f'https://api.themoviedb.org/3/authentication/session/convert/4', True, payload=payload)
+    return _call('POST', 'https://api.themoviedb.org/3/authentication/session/convert/4', True, payload=payload)
+
 
 def delete_session(session_id):
     '''
@@ -88,4 +92,4 @@ def delete_session(session_id):
 
     payload = "{\"session_id\": \""+session_id+"\"}"
 
-    return _call('DELETE', f'https://api.themoviedb.org/3/authentication/session', True, payload=payload)
+    return _call('DELETE', 'https://api.themoviedb.org/3/authentication/session', True, payload=payload)

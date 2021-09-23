@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the tv episodes tab in https://developers.themoviedb.org/3/tv-episodes
 '''
 
+
 def details(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the TV episode details by id.
@@ -14,6 +15,7 @@ def details(tv_id, season_number, episode_number, disable_cache=False, **kwargs)
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}', disable_cache, params=kwargs)
+
 
 def changes(episode_id, disable_cache=False, **kwargs):
     '''
@@ -26,6 +28,7 @@ def changes(episode_id, disable_cache=False, **kwargs):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/episode/{episode_id}/changes', disable_cache, params=kwargs)
 
+
 def account_states(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get your rating for a episode.
@@ -36,6 +39,7 @@ def account_states(tv_id, season_number, episode_number, disable_cache=False, **
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/account_states', disable_cache, params=kwargs)
 
+
 def credits(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
     Get the credits (cast, crew and guest stars) for a TV episode.
@@ -45,6 +49,7 @@ def credits(tv_id, season_number, episode_number, disable_cache=False, **kwargs)
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits', disable_cache, params=kwargs)
+
 
 def external_ids(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''
@@ -65,6 +70,7 @@ def external_ids(tv_id, season_number, episode_number, disable_cache=False, **kw
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids', disable_cache, params=kwargs)
 
+
 def images(tv_id, season_number, episode_number, disable_cache=False):
     '''
     Get the images that belong to a TV episode.
@@ -78,6 +84,7 @@ def images(tv_id, season_number, episode_number, disable_cache=False):
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images', disable_cache)
 
+
 def translations(tv_id, season_number, episode_number, disable_cache=False):
     '''
     Get the videos that have been added to a TV episode.
@@ -87,6 +94,7 @@ def translations(tv_id, season_number, episode_number, disable_cache=False):
     '''
 
     return _call('GET', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/translations', disable_cache)
+
 
 def rate_episode(tv_id, season_number, episode_number, rating, **kwargs):
     '''
@@ -102,6 +110,7 @@ def rate_episode(tv_id, season_number, episode_number, rating, **kwargs):
 
     return _call('POST', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', True, params=kwargs, payload=payload)
 
+
 def delete_rating(tv_id, season_number, episode_number, **kwargs):
     '''
     Remove your rating for a TV episode.
@@ -113,6 +122,7 @@ def delete_rating(tv_id, season_number, episode_number, **kwargs):
     '''
 
     return _call('DELETE', f'https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/rating', True, params=kwargs)
+
 
 def videos(tv_id, season_number, episode_number, disable_cache=False, **kwargs):
     '''

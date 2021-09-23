@@ -4,6 +4,7 @@ from ..base import _call
 All api requests under the trending tab in https://developers.themoviedb.org/3/trending
 '''
 
+
 def trending(media_type, time_window, disable_cache=False):
     '''
     Get the daily or weekly trending items.
